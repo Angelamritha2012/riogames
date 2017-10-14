@@ -23,6 +23,14 @@ public class UserModel {
 	private String contact;
 	@Column(name="User_address")
 	private String address;
+	@Column(name="User_password")
+	private String password;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public int getId() {
 		return id;
 	}

@@ -21,6 +21,8 @@
 		Email : <spring:input type="email" path="email"/><br>
 		Contact : <spring:input type="contact" path="contact"/><br>
 		Address : <spring:input type="text" path="address"/>
+				Password : <spring:input type="text" path="password"/>
+		
 		<input type="submit" name="butSubmit" value="Register" />		
 	</spring:form>
 </body>

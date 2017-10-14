@@ -1,11 +1,14 @@
 package com.games.rio.backend.impl;
 
+import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 
 import com.games.rio.backend.dao.UserDao;
 import com.games.rio.backend.model.UserModel;
@@ -23,25 +26,47 @@ private SessionFactory sessionFactory;
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void delete(int id) {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void update(UserModel entity) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public UserModel findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	public Set<UserModel> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+
+	public UserModel findById(String email) {
+		Session session=sessionFactory.openSession();
+		String hql = "FROM User U WHERE U.email = '" + email +"'" ;
+		Query query = session.createQuery(hql);
+		List results = query.list();
+		if(results!=null)
+			return (UserModel) results.get(0);
+		
+		else
+			return null;		
+		
+	}
+	public boolean validate(String email, String password) {
+		Session session=sessionFactory.openSession();
+		String hql = "FROM User U WHERE U.email = '" + email +"' AND U.password ='" + password + "'" ;
+		Query query = session.createQuery(hql);
+		List results = query.list();
+		if(results!=null)
+			return true;
+		
+		else
+			return false;		
+		
+	}
+
+	
 
 }
