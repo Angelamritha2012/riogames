@@ -16,12 +16,12 @@ public class HomeController {
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
-		UserModel user=new UserModel();
+		/*UserModel user=new UserModel();
 		user.setName("Angel");
 		user.setEmail("angel20@gmail.com");
 		user.setContact("1234");
 		user.setAddress("Madurai");
-		userDao.save(user);
+		userDao.save(user);*/
 		return mv;
 	}
 }

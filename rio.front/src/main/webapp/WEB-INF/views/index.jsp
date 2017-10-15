@@ -83,40 +83,40 @@
 
 <div class="row">
   <div class="col-md-2 text-center">
-    <img src="img1.jpg" width="150px" height="150px">
+    <img src="./resource/img/img1.jpg" width="150px" height="150px">
     <br>
     Dead Space 3 limited edition - <strong>$20.00</strong>
     <br>
-   <a href="basket.html"> <button class="btn btn-danger my-basket-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="20.00" data-quantity="1" data-image="images/img_1.png">Add to Basket</button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+   <a href="basket"> <button class="btn btn-danger my-basket-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="20.00" data-quantity="1" data-image="./resource/img/img1.jpg">Add to Basket</button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
 
   <div class="col-md-3 text-center">
-    <img src="img2.jpg" width="150px" height="150px">
+    <img src="./resource/img/img2.jpg" width="150px" height="150px">
     <br>
     Hitman Absolution Professional Edition- <strong>$10.00</strong>
     <br>
-    <a href="basket.html"><button class="btn btn-danger my-basket-btn" data-id="2" data-name="product 2" data-summary="summary 2" data-price="10.00" data-quantity="1" data-image="img2.jpg">Add to Basket</button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+    <a href="basket"><button class="btn btn-danger my-basket-btn" data-id="2" data-name="product 2" data-summary="summary 2" data-price="10.00" data-quantity="1" data-image="./resource/img/img2.jpg">Add to Basket</button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
   
 
   <div class="col-md-3 text-center">
-    <img src="img3.jpg" width="150px" height="150px">
+    <img src="./resource/img/img3.jpg" width="150px" height="150px">
     <br>
     Operation flashpoint Red river- <strong>$11.12</strong>
     <br>
-   <a href="basket.html"> <button class="btn btn-danger my-basket-btn" data-id="3" data-name="product 3" data-summary="summary 3" data-price="11.12" data-quantity="1" data-image="img3.jpg">Add to Basket</button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+   <a href="basket"> <button class="btn btn-danger my-basket-btn" data-id="3" data-name="product 3" data-summary="summary 3" data-price="11.12" data-quantity="1" data-image="./reesource/img/img3.jpg">Add to Basket</button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
 
   <div class="col-md-3 text-center">
-    <img src="img4.jpg" width="150px" height="150px">
+    <img src="./resource/img4.jpg" width="150px" height="150px">
     <br>
     A Long walk to freedom of life - <strong>$23.00</strong>
     <br>
-    <a href="basket.html"><button class="btn btn-danger my-basket-btn" data-id="4" data-name="product 4" data-summary="summary 4" data-price="23.00" data-quantity="1" data-image="img4.jpg">Add to Basket</button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+    <a href="basket"><button class="btn btn-danger my-basket-btn" data-id="4" data-name="product 4" data-summary="summary 4" data-price="23.00" data-quantity="1" data-image="./resource/img/img4.jpg">Add to Basket</button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
 <br></br>
 <br></br>
@@ -125,21 +125,21 @@
 </div>
 <div class="row">
   <div class="col-md-3 text-center">
-    <img src="img5.jpg" width="150px" height="150px">
+    <img src="./resource/img/img5.jpg" width="150px" height="150px">
     <br>
     Politically Incorrect- <strong>$22.00</strong>
     <br>
-    <a href="basket.html"><button class="btn btn-danger my-basket-btn" data-id="5" data-name="product 5" data-summary="summary 5" data-price="22.00" data-quantity="1" data-image="img5.jpg">Add to Basket</button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+    <a href="basket"><button class="btn btn-danger my-basket-btn" data-id="5" data-name="product 5" data-summary="summary 5" data-price="22.00" data-quantity="1" data-image="./resource/img/img5.jpg">Add to Basket</button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
   
   <div class="col-md-3 text-center">
-    <img src="img6.jpg" width="150px" height="150px">
+    <img src="./resource//img/img6.jpg" width="150px" height="150px">
     <br>
     The Bone Bed- <strong>$19.99</strong>
     <br>
-    <a href="basket.html"><button class="btn btn-danger my-basket-btn" data-id="6" data-name="product 6" data-summary="summary 6" data-price="19.99" data-quantity="1" data-image="img6.jpg">Add to Basket </button>
-    <a href="productdetails.html" class="btn btn-info">Details</a>
+    <a href="basket"><button class="btn btn-danger my-basket-btn" data-id="6" data-name="product 6" data-summary="summary 6" data-price="19.99" data-quantity="1" data-image="./resource/img/img6.jpg">Add to Basket </button>
+    <a href="productdetails" class="btn btn-info">Details</a>
   </div>
 
 </div>
@@ -151,7 +151,7 @@
   <p>@NIIT E-COMMERCE PROJECT 2017</p>
   
 </footer>    
-    <section class="section-padding wow fadeInUp delay-02s" id="Login">
+    <!-- <section class="section-padding wow fadeInUp delay-02s" id="Login">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-12">
@@ -159,8 +159,8 @@
                         <h2 class="head-title">LOGIN</h2>
                         <hr class="botm-line">
                         <div class="container">
-  <div class="jumbotron">
-  <style>
+  <div class="jumbotron"> -->
+ <!--  <style>
 form {
     border: 3px solid #f1f1f1;
 }
@@ -223,14 +223,14 @@ span.psw {
        width: 100%;
     }
 }
-</style>
-<body>
+</style -->>
+<!-- <body>
 
 <h2>Login Form</h2>
 
 <form action="login.html">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" >
+    <img src="./resource/img_avatar2.png" >
   </div>
 
   <div class="container">
@@ -257,11 +257,11 @@ span.psw {
     
 	</div>
 	<footer>
-  <p>@NIIT E-COMMERCE PROJECT 2017</p>
+  <p>@NIIT E-COMMERCE PROJECT 2017</p> -->
   
-</footer>
-    <!---->
-    <!---->
+<!-- </footer>
+    <!--
+   
     <section class="section-padding wow fadeInUp delay-05s" id="Register">
         <div class="container">
             <div class="row white">
@@ -272,12 +272,12 @@ span.psw {
                             <div class="container">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-<fieldset>
+<fieldset> --> -->
 
 <!-- Form Name -->
-<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+<!-- <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
 
-<!-- 
+
 
 <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>  
@@ -321,29 +321,29 @@ span.psw {
   
 -->
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">Username</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
+  <input  name="name" placeholder="Username" class="form-control"  type="text">
     </div>
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 
 <div class="form-group">
   <label class="col-md-4 control-label" >Password</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="password" placeholder="Password" class="form-control"  type="password">
     </div>
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 
 <div class="form-group">
   <label class="col-md-4 control-label" >Confirm Password</label> 
@@ -355,7 +355,7 @@ span.psw {
   </div>
 </div>
 
-<!-- Text input-->
+Text input
        <div class="form-group">
   <label class="col-md-4 control-label">E-Mail</label>  
     <div class="col-md-4 inputGroupContainer">
@@ -367,36 +367,36 @@ span.psw {
 </div>
 
 
-<!-- Text input-->
+Text input
        
 <div class="form-group">
   <label class="col-md-4 control-label">Contact No.</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+  <input name="contact" placeholder="(639)" class="form-control" type="text">
     </div>
   </div>
 </div>
 
-<!-- Select Basic -->
+Select Basic
 
-<!-- Success message -->
+Success message
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
 
-<!-- Button -->
+Button
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   </div>
-</div>
-
+</div> -->
+<!-- 
 </fieldset>
 </form>
 </div>
-    </div><!-- /.container -->
-        </div>
+    </div>/.container
+        </div> -->
     </section>
 	<footer>
   <p>@NIIT E-COMMERCE PROJECT 2017</p>

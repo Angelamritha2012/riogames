@@ -10,30 +10,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.games.rio.backend.dao.UserDao;
 import com.games.rio.backend.model.UserModel;
 
 @Controller
 public class UserController {
 	
 		@Autowired
-		private UserDao UserDao;
-		@RequestMapping(value="/register", method=RequestMethod.POST)
+		private UserDao userDao;
+		@RequestMapping(value="/register1", method=RequestMethod.GET)
 		public ModelAndView register(){
-			ModelAndView mv=new ModelAndView("register");
+			ModelAndView mv=new ModelAndView("register1");
 			return mv;
 		}
-		@RequestMapping(value="/register", method=RequestMethod.POST)
-		 public ModelAndView register(@ModelAttribute("user") UserModel user){
-			ModelAndView mv=new ModelAndView("success");
-			UserDao.save(user);
+		@RequestMapping(value="/register1", method=RequestMethod.POST)
+		 public ModelAndView register1(@ModelAttribute("user") UserModel user){
+			ModelAndView mv=new ModelAndView("login");
+			userDao.save(user);
 			return mv;
 		 }
-		@RequestMapping(value="/validate", method=RequestMethod.POST)
+		/*@RequestMapping(value="/validate", method=RequestMethod.POST)
 		public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){
 			String email=request.getParameter("txtEmail");
 			String password=request.getParameter("txtPassword");		
 			ModelAndView mv=null;
-			if(UserDao.validate(email, password)){
+			if(userDao.validate(email, password)){
 				mv=new ModelAndView("success");
 				//mv.getModelMap().addAttribute("user", user);
 			}else{
@@ -42,7 +43,7 @@ public class UserController {
 			}			
 			return mv;
 		
-		}
+		}*/
 	}
 
 
