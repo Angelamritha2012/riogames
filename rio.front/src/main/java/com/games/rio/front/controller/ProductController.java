@@ -41,5 +41,12 @@ public class ProductController {
 			productDao.save(product);
 			return mv;
 		 }
+		@RequestMapping(value="/supplier", method=RequestMethod.GET)
+		 public ModelAndView supplier(){
+			ModelAndView mv=new ModelAndView();
+			
+			return mv;
+		 }
+
 		
 }

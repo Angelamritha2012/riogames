@@ -17,38 +17,38 @@ public class LoginController {
 	private UserDao userDao;
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView login(){
-		ModelAndView mv=new ModelAndView("login");
+		ModelAndView mv=new ModelAndView("login","command",new UserModel());
 		return mv;
 	}
-/*	@RequestMapping(value="/validate", method=RequestMethod.POST)
+	@RequestMapping(value="/validate", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
-		String email=request.getParameter("txtemail");
-		String password=request.getParameter("txtpassword");
-		UserModel user=userDao.findById(request.getParameter("txtemail"));	
-		//request.setAttribute("customer", customer );
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		UserModel user=userDao.findById(email);	
+		
 		ModelAndView mv=null;
 		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
-			mv=new ModelAndView("index");
+			mv=new ModelAndView("success");
 			mv.getModelMap().addAttribute("user", user);
 		}else{
 			mv=new ModelAndView("failure");		
 			mv.getModelMap().addAttribute("user", user);
 		}			
 		return mv;
-	}*/
-	@RequestMapping(value="/validate", method=RequestMethod.POST)
+	}
+	/*@RequestMapping(value="/validate", method=RequestMethod.POST)
 	public ModelAndView validate (HttpServletRequest request, HttpServletResponse response){
 		String email=request.getParameter("txtemail");
 		String password=request.getParameter("txtpassword");		
 		ModelAndView mv=null;
 		if(userDao.validate(email, password)){
 			mv=new ModelAndView("success");
-			mv.getModelMap().addAttribute("user", user);
+			//mv.getModelMap().addAttribute("user", user);
 		}else{
 			mv=new ModelAndView("failure");		
-			mv.getModelMap().addAttribute("user",user);
+			//mv.getModelMap().addAttribute("user",user);
 		}		
 		return mv;
 	
-	}
+	}*/
 }

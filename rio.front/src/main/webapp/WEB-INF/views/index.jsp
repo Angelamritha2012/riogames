@@ -71,7 +71,7 @@
 </footer>
     <!---->
     <!---->
-    <section id="Basket" class="section-padding">
+    <!-- <section id="Basket" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 wow fadeInLeft delay-05s">
@@ -151,7 +151,7 @@
   <p>@NIIT E-COMMERCE PROJECT 2017</p>
   
 </footer>    
-    <!-- <section class="section-padding wow fadeInUp delay-02s" id="Login">
+ -->    <!-- <section class="section-padding wow fadeInUp delay-02s" id="Login">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-12">

@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="./resource/css/style.css">
       </head>
   <body>
-    <!--header-->
     <header class="main-header" id="header">
         <div class="bg-color">
             <!--nav-->
@@ -22,21 +21,21 @@
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                             <span class="fa fa-bars"></span>
                         </button>
-                            
+                            <a href="index.html" class="navbar-brand">Rio</a>
                         </div>
                         <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#header">HOME</a></li>
-                                <li><a href="#Basket">BASKET</a></li>
-                                <li><a href="login">LOGIN</a></li>
-                                <li><a href="register1">REGISTER</a></li>
+                                <li class="active"><a href="#header">Home</a></li>
+                                <li><a href="Products1">Products</a></li>
+                                <li><a href="login">Login</a></li>
+                                <li><a href="register1">Register</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </nav>
             <!--/ nav-->
-			<img src="./resource/logo.png" alt="RIO GAMES EDITION">
+			<img src="./resource/img/logo.png" alt="RIO GAMES EDITION">
             <div class="container text-center">
                 <div class="wrapper wow fadeInUp delay-05s" >
                    <h2 class="top-title">RIO GAMES EDITION</h2>

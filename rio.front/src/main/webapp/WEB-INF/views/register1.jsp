@@ -150,7 +150,7 @@ Form Name
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
+  <input  name="name" placeholder="Username" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -162,7 +162,7 @@ Form Name
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+  <input name="password" placeholder="Password" class="form-control"  type="password">
     </div>
   </div>
 </div>
@@ -174,7 +174,7 @@ Form Name
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+  <input name="confirmpassword" placeholder="Confirm Password" class="form-control"  type="password">
     </div>
   </div>
 </div>

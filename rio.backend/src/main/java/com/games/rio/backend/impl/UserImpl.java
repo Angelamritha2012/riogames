@@ -47,7 +47,8 @@ private SessionFactory sessionFactory;
 		Session session=sessionFactory.openSession();
 		String hql = "FROM UserModel u WHERE u.email = '" + email +"'" ;
 		Query query = session.createQuery(hql);
-		List results = query.list();
+		List results=null;
+		results = query.list();
 		if(results!=null)
 			return (UserModel) results.get(0);
 		else

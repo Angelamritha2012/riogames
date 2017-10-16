@@ -19,8 +19,8 @@ public class UserController {
 		@Autowired
 		private UserDao userDao;
 		@RequestMapping(value="/register1", method=RequestMethod.GET)
-		public ModelAndView register(){
-			ModelAndView mv=new ModelAndView("register1");
+		public ModelAndView register1(){
+			ModelAndView mv=new ModelAndView("register1","command",new UserModel());
 			return mv;
 		}
 		@RequestMapping(value="/register1", method=RequestMethod.POST)
