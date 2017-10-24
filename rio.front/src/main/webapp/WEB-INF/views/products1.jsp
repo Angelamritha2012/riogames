@@ -2,10 +2,13 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="header.jsp"%>
+
 <form action="products1" method ="POST">
 
 <body>
-<section id="Basket" class="section-padding">
+<section id="products1" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 wow fadeInLeft delay-05s">
@@ -15,7 +18,36 @@
 <div class="container">
   <div class="jumbotron">     
 
-<div class="row">
+				<ul>
+				<c:forEach items="${products}" var="p">
+				<li>
+						<div class="product-image">
+							<img src="./resource/images/${p.image}" alt="" />
+						</div>
+						<div class="product-description" data-name="${p.description}"
+							data-price="${p.price}">
+							<h3 class="product-name">${p.name}</h3>
+							<p class="product-price">${p.price}</p>
+							<form class="add-to-cart"  method="POST">
+								<div>
+									<label for="qty-1">Quantity</label> <input type="text"
+										name="qty-1" id="qty-1" class="qty" value="1" />
+								</div>
+								<p>
+									<input type="submit" value="Add to cart" class="btn" />
+									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="productdetails?id=${p.id}"
+										role="button" class="btn btn-warning">Details</a>
+								</p>
+							</form>
+						</div>
+					</li>					
+				</c:forEach>
+					
+				</ul>
+			</div>
+		</div>
+
+<!-- <div class="row">
   <div class="col-md-2 text-center">
     <img src="./resource/img/img1.jpg" width="150px" height="150px">
     <br>
@@ -76,7 +108,7 @@
     <a href="productdetails" class="btn btn-info">Details</a>
   </div>
 
-</div>
+</div> -->
     
 	
 <footer>

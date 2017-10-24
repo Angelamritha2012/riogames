@@ -17,6 +17,40 @@ public class ProductModel {
 		private String name;
 		@Column(name="Product_price")
 		private String price;
+		@Column(name="Product_image")
+		private String image;
+		@Column(name="Product_description")
+		private String description;
+		@Column(name="Product_quantity")
+		private String quantity;
+		@Column(name="Product_supplierid")
+		private int supplierid;
+		
+
+		public int getSupplierid() {
+			return supplierid;
+		}
+		public void setSupplierid(int supplierid) {
+			this.supplierid = supplierid;
+		}
+		public String getImage() {
+			return image;
+		}
+		public void setImage(String image) {
+			this.image = image;
+		}
+		public String getDescription() {
+			return description;
+		}
+		public void setDescription(String description) {
+			this.description = description;
+		}
+		public String getQuantity() {
+			return quantity;
+		}
+		public void setQuantity(String quantity) {
+			this.quantity = quantity;
+		}
 		public int getId() {
 			return id;
 		}

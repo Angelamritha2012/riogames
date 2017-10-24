@@ -92,9 +92,40 @@ Mode(s)---Single-player, multiplayer<br>
 </blockquote>
 </p>
 <div>
-<a href=basket.html><button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
+<a href=basket><button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
 </div>
-			
+			<div class="details col-sm-4">
+						<h3 class="product-title"><b><i>${product.name}</i></b></h3>
+
+						<p class="product-description">${product.description}</p>
+						<h4 class="release-date"><b>Initial release date:</b> 5 February 2013</h4>
+						<h4 class="developer"><b>Developer:</b> Visceral Games</h4>
+						<h4 class="price"><b>current price: </b><span>${product.pprice}</span></h4>
+						
+						
+						<div class="action">
+							<div data-name="Dead Space 3 Edition" data-price="20.00">
+					<!--<h3 class="product-name">Dead Space 3 Edition</h3>
+						<p class="product-price">$20.00</p>-->
+						<form class="add-to-cart" action="cart.jsp" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" /></p>
+						</form>
+					</div>
+				</li>
+						</div>
+					</div>
+			</div> 
+		</div>
+	</div>
+</div>
+</div>
+ 
+</div>
+	</div>
 			
 			</body>
 			</html>

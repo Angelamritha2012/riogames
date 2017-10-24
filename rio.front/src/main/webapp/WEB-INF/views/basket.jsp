@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -18,7 +18,7 @@
     
   </div>
 </nav>
-<!-- 
+
 <div class="container">
 
 <div class="jumbotron" style="background-color:#FFFFF0">
@@ -29,7 +29,7 @@
  
  </div>
  <!--Lower Header Section 
--->
+
 <div class="container">
 <div id="gototop"> </div>
 <header id="header">
@@ -129,3 +129,4 @@
 
 </body>
 </html>
+ -->

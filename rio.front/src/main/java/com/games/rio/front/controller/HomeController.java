@@ -27,11 +27,6 @@ public class HomeController {
 		return mv;
 	}
 		
-	@RequestMapping(value="/products1", method=RequestMethod.GET)
-	 public ModelAndView product1(){
-		ModelAndView mv=new ModelAndView();
-		
-		return mv;
-	 }
+	
 	
 }

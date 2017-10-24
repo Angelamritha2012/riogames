@@ -1,7 +1,9 @@
 package com.games.rio.backend.impl;
 
+import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +33,20 @@ public class ProductImpl implements ProductDao {
 			
 		}
 		public ProductModel findById(int id) {
+			return (ProductModel)sessionFactory.openSession().get(ProductModel.class,id);
 			// TODO Auto-generated method stub
-			return null;
+			
 		}
-		public Set<ProductModel> findAll() {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		public List<ProductModel> findAll() {
+			
+				// TODO Auto-generated method stub
+				Session s=sessionFactory.openSession();
+				s.beginTransaction();
+				Query query=s.createQuery("from Product");
+				List<ProductModel> list=query.list();
+				System.out.println(list);
+				s.getTransaction().commit();
+				return list;
+			}
+			
 }

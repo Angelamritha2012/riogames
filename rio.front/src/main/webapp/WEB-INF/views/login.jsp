@@ -39,7 +39,7 @@
 </form>
 
          
-<input type="submit" name="submit" value ="submit" class="btn btn-submit">
+
     
 	</div>
 	<footer>
