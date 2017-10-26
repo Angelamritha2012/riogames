@@ -13,7 +13,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.games.rio.backend.model.Category;
 import com.games.rio.backend.model.ProductModel;
+import com.games.rio.backend.model.Supplier;
 import com.games.rio.backend.model.UserModel;
 
 @Configuration
@@ -47,6 +49,8 @@ public class HibernateConfig {
 		builder.addProperties(getHibernateProperties());
 		builder.addAnnotatedClass(UserModel.class);
 		builder.addAnnotatedClass(ProductModel.class);
+		builder.addAnnotatedClass(Supplier.class);
+		builder.addAnnotatedClass(Category.class);
 		return builder.buildSessionFactory();
 	}
 

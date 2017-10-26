@@ -21,12 +21,12 @@
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                             <span class="fa fa-bars"></span>
                         </button>
-                            <a href="index.html" class="navbar-brand">Rio</a>
+                            <a href="index" class="navbar-brand"></a>
                         </div>
                         <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#header">Home</a></li>
-                                <li><a href="Products1">Products</a></li>
+                                <li><a href="products">Products</a></li>
                                 <li><a href="login">Login</a></li>
                                 <li><a href="register1">Register</a></li>
                             </ul>

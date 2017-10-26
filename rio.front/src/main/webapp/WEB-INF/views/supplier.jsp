@@ -13,16 +13,20 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      
+      <a class="navbar-brand" href="#">RIO</a>
     </div>
     <ul class="nav navbar-nav">
       
       
-          <<li class="active"><li><a href="add"><span class="glyphicon glyphicon-plus"></span>ADD</a></li>
+                               <li ><li><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>ADD</a>
+                               <ul class="dropdown-menu">
+									<li><a href="addproduct">Product</a>
+									<li><a href="addcategory">Category</a>
+									<li><a href="addsupplier">Supplier</a>
+							  </ul>
+                               </li>
                                 <li><a href="update"><span class="glyphicon glyphicon-pencil"></span>UPDATE</a></li>
                                 <li><a href="delete"><span class="glyphicon glyphicon-trash"></span>DELETE</a></li>
-        </ul>
-      </li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">

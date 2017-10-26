@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="spring"%>     
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,10 +20,15 @@
     <ul class="nav navbar-nav">
       
       
-          <<li class="active">
-                                <li><a href="supplier"><!-- <span class="glyphicon glyphicon-trash"></span>-->Back</a></li>
-        </ul>
-      </li>
+                               <li class="active"><li><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>ADD</a>
+                               <ul class="dropdown-menu">
+									<li><a href="addproduct">Product</a>
+									<li><a href="addcategory">Category</a>
+									<li><a href="addsupplier">Supplier</a>
+							  </ul>
+                               </li>
+                                <li><a href="update"><span class="glyphicon glyphicon-pencil"></span>UPDATE</a></li>
+                                <li><a href="delete"><span class="glyphicon glyphicon-trash"></span>DELETE</a></li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -29,7 +36,7 @@
     </ul>
   </div>
 </nav>
-<form action="add" method="POST">
+<form action="addproduct" method="POST">
 <h1>Add to Products</h1>
 <div class="container">
  <div class="row">
@@ -37,7 +44,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
- -->  <input name="supplierid" placeholder="Suppiler id" class="form-control" type="text"><br>
+ -->  <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
     </div>
   </div>
 </div>
@@ -51,59 +58,41 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="Product name" placeholder="productname" class="form-control"  type="text"><br>
+  <input  name="pname" placeholder="productname" class="form-control"  type="text"><br>
     </div>
   </div>
 </div>
 </div>
-
-<!-- Text input-->
-
 <!-- <div class="form-group">
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Image</label> 
+  <label class="col-md-4 control-label" >Product Image</label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
- -->  <input name="Product Id" placeholder="ID" class="form-control"  type="file"><br>
+ -->  <input name="pimage" placeholder="ID" class="form-control"  type="file"><br>
     </div>
   </div>
 </div>
 </div>
 
-<!-- Text input-->
 
-<!-- <div class="form-group">
- --><div class="container">
- 
- <div class="row">
-  <label class="col-md-4 control-label" >Quantity</label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
- -->  <input name="quantity" placeholder="quantity" class="form-control"  type="quantity"><br>
-    </div>
-  </div>
-</div>
-</div>
 
 <!-- Text input-->
 <!--        <div class="form-group">
  -->      
  <div class="container">
   <div class="row">
-  <label class="col-md-4 control-label">Description</label>  
+  <label class="col-md-4 control-label">Product Description</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
- -->  <input name="description" placeholder="Description" class="form-control"  type="text"><br>
+ -->  <input name="pdescrip" placeholder="Description" class="form-control"  type="text"><br>
     </div>
   </div>
 </div>
 </div>
-
 
 <!-- Text input-->
        
@@ -115,7 +104,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
-  <input name="price" placeholder="price" class="form-control" type="text"><br>
+  <input name="pprice" placeholder="price" class="form-control" type="text"><br>
     </div>
   </div>
 </div>
@@ -123,6 +112,25 @@
 <!-- <div class="form-group">
 
  -->
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+ --><div class="container">
+ 
+ <div class="row">
+  <label class="col-md-4 control-label" >Quantity</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ -->  <input name="pquantity" placeholder="quantity" class="form-control"  type="quantity"><br>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
  
 
 <!-- Select Basic -->
@@ -136,12 +144,142 @@
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add">
+  <!-- <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add"> -->
+<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspADD <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>  
   </div>
 </div>
 </div>
   
 </form>
 
+<!-- Category -->
+
+
+
+<form action="addcategory" method="POST">
+<h1>Category</h1>
+
+
+<!-- <div class="form-group">
+ -->
+ <div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label">Category name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="cname" placeholder="category name" class="form-control"  type="text"><br>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="form-group">
+ -->
+ <div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label" >Description</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ -->  <input name="cdesc" placeholder="Description" class="form-control"  type="text"><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+
+<div class="row">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <!-- <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add"> -->
+<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspADD <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>  
+  </div>
+</div>
+</div>
+
+</form>
+
+
+
+
+<!-- Supplier -->
+
+
+
+<form action="addsupplier" method="POST">
+<h1>Supplier</h1>
+<!-- <div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label">Supplier ID</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<!-- <div class="form-group">
+ -->
+ <div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label"> Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" placeholder="name" class="form-control"  type="text"><br>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="form-group">
+ -->
+ <div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label" >Address</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ -->  <input name="address" placeholder="address" class="form-control"  type="text"><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label" >Email</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ -->  <input name="email" placeholder="Email" class="form-control"  type="email"><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label" >Contact</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+<!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+ -->  <input name="contact" placeholder="contact" class="form-control"  type="text"><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+
+<div class="row">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <!-- <input type="submit" class="btn btn-warning"  name="butSubmit" value="Add"> -->
+<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspADD <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>  
+  </div>
+</div>
+</div>
+</form>
 </body>
 </html>
