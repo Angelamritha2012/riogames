@@ -114,10 +114,7 @@
 </div> -->
     
 	
-<footer>
-  <p>@NIIT E-COMMERCE PROJECT 2017</p>
-  
-</footer>    
+	 <%@include file="footer.jsp"%>
 
 
 </body>

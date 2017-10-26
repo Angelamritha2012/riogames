@@ -28,7 +28,7 @@ public class LoginController {
 		
 		ModelAndView mv=null;
 		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
-			mv=new ModelAndView("products1");
+			mv=new ModelAndView("products");
 			mv.getModelMap().addAttribute("user", user);
 		}else{
 			mv=new ModelAndView("failure");		

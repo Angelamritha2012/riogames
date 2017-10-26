@@ -37,12 +37,13 @@
             <!--/ nav-->
 			<img src="./resource/img/logo.png" alt="RIO GAMES EDITION">
             <div class="container text-center">
-                <div class="wrapper wow fadeInUp delay-05s" >
+                
                    <h2 class="top-title">RIO GAMES EDITION</h2>
 					<h6 class="top-title">Welcome to the Home of RIO </h6>
                      
                 </div>
             </div>
         </div>
+        
     </header>
 	

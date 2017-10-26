@@ -22,7 +22,7 @@ public class ProductController {
 			@Autowired
 			private ProductDao productDao;
 		
-
+/*
 			@RequestMapping(value="/supplier", method=RequestMethod.GET)
 			public ModelAndView supplier() {
 			ModelAndView mv=new ModelAndView("supplier");
@@ -32,7 +32,7 @@ public class ProductController {
 			public ModelAndView suppiler() {
 			ModelAndView mv=new ModelAndView("supplier");
 				return mv;
-			}
+			}*/
 			
 			
 			
@@ -82,7 +82,7 @@ public class ProductController {
 //			}
 */			@RequestMapping(value="/addproduct", method=RequestMethod.POST)
 		  	public ModelAndView viewAddProduct(@ModelAttribute("product") ProductModel product){
-				ModelAndView mv=new ModelAndView("products");
+				ModelAndView mv=new ModelAndView("supplier");
 				productDao.save(product);
 				return mv;
 		

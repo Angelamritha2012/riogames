@@ -1,5 +1,7 @@
 package com.games.rio.front.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,17 +27,21 @@ public class SupplierController {
 	private CategoryDao categoryDao;
 	@Autowired
 	private SupplierDao supplierDao;
-	/*@RequestMapping(value="/stock", method=RequestMethod.GET)
-	public ModelAndView stockHome(){
-		ModelAndView mv=new ModelAndView("stock");
+	@RequestMapping(value="/supplier" , method=RequestMethod.GET)
+	public ModelAndView myProducts() {
+		ModelAndView mv=new ModelAndView ("supplier");
+		List<ProductModel> products=productDao.findAll();
+		mv.getModelMap().addAttribute("products", products);
 		return mv;
-}
+	}
 	
-	@RequestMapping(value="/stock", method=RequestMethod.POST)
-	public ModelAndView returnStock(){
-		ModelAndView mv=new ModelAndView("stock","command",new ProductModel());
+	@RequestMapping(value="/supplier" , method=RequestMethod.POST)
+	public ModelAndView viewMyProducts() {
+		ModelAndView mv=new ModelAndView ("supplier");
+		List<ProductModel> products=productDao.findAll();
+		mv.getModelMap().addAttribute("products", products);
 		return mv;
-}*/
+	}
 	
 	
 	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
@@ -56,13 +62,13 @@ public class SupplierController {
 	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("products");
+		ModelAndView mv=new ModelAndView("supplier");
 		return mv;
 	 }
 	@RequestMapping(value="/addsupplier", method=RequestMethod.POST)
 	 public ModelAndView addSupplier(@ModelAttribute("supplier") Supplier supplier){
 		supplierDao.save(supplier);
-		ModelAndView mv=new ModelAndView("products");
+		ModelAndView mv=new ModelAndView("supplier");
 		return mv;
 	 }	
 	@RequestMapping(value="/delete", method=RequestMethod.GET)

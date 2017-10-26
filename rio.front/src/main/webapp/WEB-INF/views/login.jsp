@@ -11,7 +11,7 @@
 <section class="section-padding wow fadeInUp delay-02s" id="Login">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-4 col-sm-4">
                     <div class="section-title">
                         <h2 class="head-title">LOGIN</h2>
                         <hr class="botm-line">
@@ -21,12 +21,12 @@
 
 <form action="validate" method ="POST">
   
-  <div class="container">
+  
     <label><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" required><br><br>
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <input type="password" placeholder="Enter Password" name="password" required><br><br>
         
     <button type="submit">Login</button>
    
@@ -38,12 +38,19 @@
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="password">Forgot <a href="login">password?</a></span>
   </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  
 </form>
 
          
 
     
-	</div>
+	
 	<footer>
   <p>@NIIT E-COMMERCE PROJECT 2017</p>
 
