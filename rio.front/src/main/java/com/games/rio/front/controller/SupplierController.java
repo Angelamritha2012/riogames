@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.games.rio.backend.dao.CategoryDao;
@@ -44,6 +46,7 @@ public class SupplierController {
 	}
 	
 	
+	
 	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
 	public ModelAndView viewAddCategory(){
 		ModelAndView mv=new ModelAndView("add","command",new Category());
@@ -51,14 +54,6 @@ public class SupplierController {
 		return mv;
 		
 }
-	@RequestMapping(value="/addsupplier", method=RequestMethod.GET)
-	public ModelAndView viewAddSupplier(){
-		ModelAndView mv=new ModelAndView("add","command",new Supplier());
-		//ModelAndView mv1=new ModelAndView("add","command",new Category());
-		return mv;
-		
-}
-	
 	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
@@ -71,6 +66,14 @@ public class SupplierController {
 		ModelAndView mv=new ModelAndView("supplier");
 		return mv;
 	 }	
+
+	@RequestMapping(value="/addsupplier", method=RequestMethod.GET)
+	public ModelAndView viewAddSupplier(){
+		ModelAndView mv=new ModelAndView("add","command",new Supplier());
+		//ModelAndView mv1=new ModelAndView("add","command",new Category());
+		return mv;
+		
+}
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
 	public ModelAndView viewDelete(){
 		ModelAndView mv=new ModelAndView("delete","command",new ProductModel());
@@ -81,23 +84,42 @@ public class SupplierController {
 		int pid=Integer.parseInt(request.getParameter("id"));
 		 		//Product product=productDao.delete(id);	
 		 		productDao.delete(pid);
-		 		ModelAndView mv=new ModelAndView("myproducts");
+		 		ModelAndView mv=new ModelAndView("product");
 		 		return mv;
 	 }
 	
+	
+	
+	
+	
 	@RequestMapping(value="/update", method=RequestMethod.GET)
 	public ModelAndView viewUpdate(){
-		ModelAndView mv=new ModelAndView("add","command",new ProductModel());
+		ModelAndView mv=new ModelAndView("update","command",new ProductModel());
 		return mv;
 }
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	 public ModelAndView updateProduct(@ModelAttribute("product") ProductModel product){
 		productDao.update(product);
-		ModelAndView mv=new ModelAndView("stock");
+		ModelAndView mv=new ModelAndView("product");
 		return mv;
 	 }
+	
 
-
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {
+		ModelAndView mv=new ModelAndView("view");
+		ProductModel product =productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
+		return mv;
+	}
+	
+	/*@RequestMapping(value="/add", method=RequestMethod.GET)
+	public ModelAndView viewAdd(){
+		ModelAndView mv=new ModelAndView("add");
+		//ModelAndView mv1=new ModelAndView("add","command",new Category());
+		return mv;
+		
+}	*/
 }
 
 

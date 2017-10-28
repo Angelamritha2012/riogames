@@ -5,6 +5,7 @@ import java.util.List;
 import com.games.rio.backend.model.Category;
 
 public interface CategoryDao {
+	
 	public void save(Category entity);
 	public void delete(int cid);
 	public void update(Category entity);

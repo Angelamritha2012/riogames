@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="spring"%>     
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -38,17 +39,17 @@
 </nav>
 <form action="addproduct" method="POST">
 <h1>Add to Products</h1>
-<div class="container">
+<!-- <div class="container">
  <div class="row">
   <label class="col-md-4 control-label">Supplier ID</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-<!--         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
- -->  <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
     </div>
   </div>
 </div>
-</div>
+</div> -->
 
 <!-- <div class="form-group">
  -->
@@ -60,6 +61,43 @@
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <input  name="pname" placeholder="productname" class="form-control"  type="text"><br>
     </div>
+  </div>
+</div>
+</div>
+<div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label">Category name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+ 										 <select   class="form-control" name="cat" id="cat" tabindex="1" placeholder="Select Category">
+ 										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
+    																			<option id="2" value="Runner Games">Runner Games</option>
+    																			<option id="3" value="Thriller Games">Thriller Games</option>
+    																			<option id="4" value="Cookery">Cookery</option> -->
+    									 <c:forEach items="${categories}" var="c">
+      									<option value="${c.cid}">${c.cname}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+    								 </div>
+  </div>
+</div>
+<div class="container">
+ <div class="row">
+  <label class="col-md-4 control-label">Supplier name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+ 										 <select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Category">
+ 										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
+    																			<option id="2" value="Runner Games">Runner Games</option>
+    																			<option id="3" value="Thriller Games">Thriller Games</option>
+    																			<option id="4" value="Cookery">Cookery</option> -->
+    									 <c:forEach items="${supplier}" var="c">
+      									<option value="${c.id}">${c.name}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+    								 </div>
   </div>
 </div>
 </div>
@@ -152,6 +190,7 @@
   
 </form>
 
+
 <!-- Category -->
 
 
@@ -209,7 +248,7 @@
 
 <form action="addsupplier" method="POST">
 <h1>Supplier</h1>
-<!-- <div class="container">
+<div class="container">
  <div class="row">
   <label class="col-md-4 control-label">Supplier ID</label>  
     <div class="col-md-4 inputGroupContainer">
@@ -219,7 +258,7 @@
     </div>
   </div>
 </div>
-</div> -->
+</div>
 
 <!-- <div class="form-group">
  -->

@@ -1,9 +1,11 @@
 package com.games.rio.backend.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="Product")
@@ -13,29 +15,31 @@ public class ProductModel {
 		//@GeneratedValue(strategy=GenerationType.AUTO)
 		@Column(name="Product_pid")
 		private int pid;
-		@Column(name="Product_sid")
-        private String sid;
+/*		@Column(name="Product_sid")
+*/		@ManyToOne(cascade=CascadeType.ALL)
+		private Supplier sid;
 		@Column(name="Product_pimage")
         private String pimage;
 		@Column(name="Product_pname")
         private String pname;
+		@ManyToOne(cascade=CascadeType.ALL)
+		private Category cat;
 		@Column(name="Product_pdescrip")
         private String pdescrip;
 		@Column(name="Product_pquantity")
         private int pquantity;
 		@Column(name="Product_pprice")
         private float pprice;
-
 		public int getPid() {
 			return pid;
 		}
 		public void setPid(int pid) {
 			this.pid = pid;
 		}
-		public String getSid() {
+		public Supplier getSid() {
 			return sid;
 		}
-		public void setSid(String sid) {
+		public void setSid(Supplier sid) {
 			this.sid = sid;
 		}
 		public String getPimage() {
@@ -49,6 +53,12 @@ public class ProductModel {
 		}
 		public void setPname(String pname) {
 			this.pname = pname;
+		}
+		public Category getCat() {
+			return cat;
+		}
+		public void setCat(Category cat) {
+			this.cat = cat;
 		}
 		public String getPdescrip() {
 			return pdescrip;
@@ -68,7 +78,6 @@ public class ProductModel {
 		public void setPprice(float pprice) {
 			this.pprice = pprice;
 		}
-		
 		
 		
 		

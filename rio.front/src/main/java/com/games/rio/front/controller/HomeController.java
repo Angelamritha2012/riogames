@@ -15,18 +15,32 @@ import com.games.rio.backend.model.UserModel;
 public class HomeController {
 	@Autowired
 	private UserDao userDao;
-	@RequestMapping(value="/",method=RequestMethod.GET)
+	/*@RequestMapping(value="/",method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("index");
-		/*UserModel user=new UserModel();
+		UserModel user=new UserModel();
 		user.setName("Angel");
 		user.setEmail("angel20@gmail.com");
 		user.setContact("1234");
 		user.setAddress("Madurai");
-		userDao.save(user);*/
+		userDao.save(user);
+		return mv;
+	}*/
+		
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public ModelAndView index(){
+		ModelAndView mv=new ModelAndView("index");
 		return mv;
 	}
-		
-	
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView showHome(){
+		ModelAndView mv=new ModelAndView("index");
+		return mv;
+	}
+	@RequestMapping(value="/usrhome", method=RequestMethod.GET)
+	public ModelAndView showMyHome(){
+		ModelAndView mv=new ModelAndView("index");
+		return mv;
+	}
 	
 }
