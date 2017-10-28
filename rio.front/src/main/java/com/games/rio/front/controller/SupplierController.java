@@ -74,11 +74,11 @@ public class SupplierController {
 		return mv;
 		
 }
-	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	/*@RequestMapping(value="/delete", method=RequestMethod.GET)
 	public ModelAndView viewDelete(){
 		ModelAndView mv=new ModelAndView("delete","command",new ProductModel());
 		return mv;
-}
+}*/
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	 public ModelAndView deleteProduct(HttpServletRequest request, HttpServletResponse response){
 		int pid=Integer.parseInt(request.getParameter("id"));

@@ -46,36 +46,55 @@
                         <h2 class="head-title">PRODUCTS</h2>
   
 <div class="container">
-  <div class="jumbotron">     
-
-				<ul>
-				<c:forEach items="${products}" var="p">
-				<li>
-						<div class="product-image">
-							<img src="./resource/img/${p.pimage}" alt="" />
-						</div>
-						<div class="product-description" data-name="${p.pdescrip}"
-							data-price="$(p.price)">
-							<h3 class="product-name">${p.pname}</h3>
-							<p class="product-price">${p.pprice}</p>
-							<form class="add-to-cart" action="cart" method="post">
-								<div>
-									<label for="qty-1">Quantity</label> <input type="text"
-										name="qty-1" id="qty-1" class="qty" value="1" />
-								</div>
-								<p>
-									<input type="submit" value="Add to cart" class="btn" />
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="product?id=${p.pid}"
-										role="button" class="btn btn-warning">Details</a>
-								</p>
-							</form>
-						</div>
-					</li>					
-				</c:forEach>
-					
-				</ul>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+					Id
+				</div>
+				<div class="col-md-2">
+					Name
+				</div>
+				<div class="col-md-2">
+					Description
+				</div>
+				<div class="col-md-2">
+					Quantity
+				</div>
+				<div class="col-md-2">				
+					Price
+				</div>
+				<div class="col-md-2">
+					Action
+				</div>
 			</div>
 		</div>
+		<c:forEach items="${products}" var="p">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+					${p.pid}
+				</div>
+				<div class="col-md-2">
+					${p.pname}
+				</div>
+				<div class="col-md-2">
+					${p.pdescrip}
+				</div>
+				<div class="col-md-2">
+					${p.pquantity}
+				</div>
+				<div class="col-md-2">
+					${p.pprice}
+				</div>
+				<div class="col-md-2">
+					<a href="edit?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="delete?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+			</div>
+		</div>		
+		</c:forEach>
+		
+	</div>
 		
 
 </body>

@@ -123,6 +123,12 @@ public class ProductController {
 				return mv;
 			 }
 		
-		
+			@RequestMapping(value="/delete", method=RequestMethod.GET)
+			public ModelAndView delete(@RequestParam("id") int id){
+				ModelAndView mv=new ModelAndView("product","command", new ProductModel());
+				productDao.delete(id);
+				mv.getModelMap().addAttribute("products", productDao.findAll());
+				return mv;
+			}	
 }
 
