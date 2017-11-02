@@ -7,8 +7,10 @@
 
 <html>
 <head>
+ <%@include file="header.jsp"%>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -37,7 +39,44 @@
       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
+</nav> -->
+<!-- <html>
+<head>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    Brand and toggle get grouped for better mobile display
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">RIO</a>
+    </div>
+
+    Collect the nav links, forms, and other content for toggling
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+        <li role="separator" class="divider"></li>
+                                            <li><a href="update"><span class="glyphicon glyphicon-pencil"></span>UPDATE</a></li>
+            
+            <li role="separator" class="divider"></li>
+                                <li><a href="delete"><span class="glyphicon glyphicon-trash"></span>DELETE</a></li>
+   
+          <a href="add" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="addproduct">PRODUCT</a></li>
+            <li><a href="addcategory">CATEGORY</a></li>
+            <li><a href="addsupplier">SUPPLIER</a></li>
+                   </ul>
+                  <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
 </nav>
+</head>
+</html> -->
 <section id="products" class="section-padding">
         <div class="container">
             <div class="row">
@@ -87,7 +126,7 @@
 					${p.pprice}
 				</div>
 				<div class="col-md-2">
-					<a href="edit?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="update?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
 					<a href="delete?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 			</div>

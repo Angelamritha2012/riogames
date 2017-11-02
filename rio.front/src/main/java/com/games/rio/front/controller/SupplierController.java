@@ -93,17 +93,34 @@ public class SupplierController {
 	
 	
 	@RequestMapping(value="/update", method=RequestMethod.GET)
-	public ModelAndView viewUpdate(){
-		ModelAndView mv=new ModelAndView("update","command",new ProductModel());
+	public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("update");
+		ProductModel product=productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="/update", method=RequestMethod.POST)
-	 public ModelAndView updateProduct(@ModelAttribute("product") ProductModel product){
-		productDao.update(product);
-		ModelAndView mv=new ModelAndView("product");
-		return mv;
-	 }
 	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView();
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		ProductModel product =new ProductModel();
+		product.setPname(request.getParameter("pname"));
+		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+		product.setPdescrip(request.getParameter("pdescrip"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimage(request.getParameter("pimage"));
+		product.setCat(category);
+		product.setSid(supplier);
+		productDao.update(product);
+		mv.getModelMap().addAttribute("supplier", productDao.findAll());
+		return mv;
+		
+	 }
 
 	@RequestMapping(value="/view", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {

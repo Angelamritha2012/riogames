@@ -11,17 +11,19 @@
 <div class="container">
             <div class="container text-center">
 
-  <div class="col-md-6 "><h2>REGISTRATION   FORM</h2></div>  
+  <div class="col-md-6 "><h2><center><p align="right">REGISTRATION   FORM</p></center></h2></div>  
   <div class="col-md-4 inputgroupContainer">
   <div class="input-group">
     </div>
   </div>
   </div>
 </div>
+<br>
+<br>
 <div class="form-group">
             <div class="container text-center">
 
-  <label class="col-md-4 control-label">Username</label>  
+  <label class="col-md-4 control-label"><p align="right">Username</p></label>  
   <div class="col-md-4 inputgroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -36,7 +38,7 @@
 <div class="form-group">
             <div class="container text-center">
 
-  <label class="col-md-4 control-label" >Password</label> 
+  <label class="col-md-4 control-label" ><p align="right">Password</p></label> 
     <div class="col-md-4 inputgroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -51,7 +53,7 @@
 <div class="form-group">
             <div class="container text-center">
 
-  <label class="col-md-4 control-label" >Confirm Password</label> 
+  <label class="col-md-4 control-label" ><p align="right">Confirm Password</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -62,10 +64,10 @@
 </div>
 
 
-       <div class="form-groupr">
+       <div class="form-group">
                    <div class="container text-center">
        
-  <label class="col-md-4 control-label">E-Mail</label>  
+  <label class="col-md-4 control-label"><p align="right">E-Mail</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -81,7 +83,7 @@
 <div class="form-group">
             <div class="container text-center">
 
-  <label class="col-md-4 control-label">Contact </label>  
+  <label class="col-md-4 control-label"><p align="right">Contact </p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -93,7 +95,7 @@
 <div class="form-group">
             <div class="container text-center">
 
-  <label class="col-md-4 control-label">Address</label>  
+  <label class="col-md-4 control-label"><p align="right">Address</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-address"></i></span>

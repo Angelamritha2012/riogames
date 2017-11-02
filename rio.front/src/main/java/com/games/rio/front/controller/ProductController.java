@@ -119,15 +119,15 @@ public class ProductController {
 				product.setCat(category);
 				product.setSid(supplier);
 				productDao.save(product);
-				ModelAndView mv=new ModelAndView("product");
+				ModelAndView mv=new ModelAndView("supplier");
 				return mv;
 			 }
 		
 			@RequestMapping(value="/delete", method=RequestMethod.GET)
 			public ModelAndView delete(@RequestParam("id") int id){
-				ModelAndView mv=new ModelAndView("product","command", new ProductModel());
+				ModelAndView mv=new ModelAndView("supplier","command", new ProductModel());
 				productDao.delete(id);
-				mv.getModelMap().addAttribute("products", productDao.findAll());
+				mv.getModelMap().addAttribute("supplier", productDao.findAll());
 				return mv;
 			}	
 }

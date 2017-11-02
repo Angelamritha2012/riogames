@@ -55,7 +55,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Product name</label>  
+  <label class="col-md-4 control-label"><p align="right">Product name</p></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -66,7 +66,7 @@
 </div>
 <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Category name</label>  
+  <label class="col-md-4 control-label"><p align="right">Category name</p></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
  										 <select   class="form-control" name="cat" id="cat" tabindex="1" placeholder="Select Category">
@@ -84,7 +84,7 @@
 </div>
 <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Supplier name</label>  
+  <label class="col-md-4 control-label"><p align="right">Supplier name</p></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
  										 <select   class="form-control" name="sid" id="sid" tabindex="1" placeholder="Select Category">
@@ -105,7 +105,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Product Image</label> 
+  <label class="col-md-4 control-label" ><p align="right">Product Image</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -122,7 +122,7 @@
  -->      
  <div class="container">
   <div class="row">
-  <label class="col-md-4 control-label">Product Description</label>  
+  <label class="col-md-4 control-label"><p align="right">Product Description</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -138,7 +138,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Price</label>  
+  <label class="col-md-4 control-label"><p align="right">Price</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
@@ -148,7 +148,6 @@
 </div>
 </div>
 <!-- <div class="form-group">
-
  -->
 
 <!-- Text input-->
@@ -157,7 +156,7 @@
  --><div class="container">
  
  <div class="row">
-  <label class="col-md-4 control-label" >Quantity</label> 
+  <label class="col-md-4 control-label" ><p align="right">Quantity</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -203,7 +202,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Category name</label>  
+  <label class="col-md-4 control-label"><p align="right">Category name</p></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -216,7 +215,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Description</label> 
+  <label class="col-md-4 control-label" ><p align="right">Description</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -250,7 +249,7 @@
 <h1>Supplier</h1>
 <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label">Supplier ID</label>  
+  <label class="col-md-4 control-label"><p align="right">Supplier ID</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -264,7 +263,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label"> Name</label>  
+  <label class="col-md-4 control-label"><p align="right"> Name</p></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -277,7 +276,7 @@
  -->
  <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Address</label> 
+  <label class="col-md-4 control-label" ><p align="right">Address</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -288,7 +287,7 @@
 </div>
 <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Email</label> 
+  <label class="col-md-4 control-label" ><p align="right">Email</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -299,7 +298,7 @@
 </div>
 <div class="container">
  <div class="row">
-  <label class="col-md-4 control-label" >Contact</label> 
+  <label class="col-md-4 control-label" ><p align="right">Contact</p></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
 <!--   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
