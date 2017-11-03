@@ -33,6 +33,10 @@ public class SupplierController {
 	public ModelAndView myProducts() {
 		ModelAndView mv=new ModelAndView ("supplier");
 		List<ProductModel> products=productDao.findAll();
+		List<Category> category=categoryDao.findAll();
+
+		mv.getModelMap().addAttribute("category", category);
+
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
@@ -41,44 +45,29 @@ public class SupplierController {
 	public ModelAndView viewMyProducts() {
 		ModelAndView mv=new ModelAndView ("supplier");
 		List<ProductModel> products=productDao.findAll();
+		List<Category> category=categoryDao.findAll();
+
+		mv.getModelMap().addAttribute("category", category);
+
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
 	
 	
 	
-	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
-	public ModelAndView viewAddCategory(){
-		ModelAndView mv=new ModelAndView("add","command",new Category());
-		//ModelAndView mv1=new ModelAndView("add","command",new Category());
-		return mv;
-		
-}
-	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
-	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
-		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("supplier");
-		return mv;
-	 }
-	@RequestMapping(value="/addsupplier", method=RequestMethod.POST)
-	 public ModelAndView addSupplier(@ModelAttribute("supplier") Supplier supplier){
-		supplierDao.save(supplier);
-		ModelAndView mv=new ModelAndView("supplier");
-		return mv;
-	 }	
-
-	@RequestMapping(value="/addsupplier", method=RequestMethod.GET)
-	public ModelAndView viewAddSupplier(){
-		ModelAndView mv=new ModelAndView("add","command",new Supplier());
-		//ModelAndView mv1=new ModelAndView("add","command",new Category());
-		return mv;
-		
-}
 	/*@RequestMapping(value="/delete", method=RequestMethod.GET)
 	public ModelAndView viewDelete(){
 		ModelAndView mv=new ModelAndView("delete","command",new ProductModel());
 		return mv;
 }*/
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public ModelAndView delete(@RequestParam("id") int id){
+		ModelAndView mv=new ModelAndView("supplier","command", new ProductModel());
+		productDao.delete(id);
+		mv.getModelMap().addAttribute("supplier", productDao.findAll());
+		return mv;
+	}	
+	
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	 public ModelAndView deleteProduct(HttpServletRequest request, HttpServletResponse response){
 		int pid=Integer.parseInt(request.getParameter("id"));
@@ -92,7 +81,7 @@ public class SupplierController {
 	
 	
 	
-	@RequestMapping(value="/update", method=RequestMethod.GET)
+	/*@RequestMapping(value="/update", method=RequestMethod.GET)
 	public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		ProductModel product=productDao.findById(pid);
@@ -120,7 +109,37 @@ public class SupplierController {
 		mv.getModelMap().addAttribute("supplier", productDao.findAll());
 		return mv;
 		
-	 }
+	 }*/
+	/*@RequestMapping(value="/update", method=RequestMethod.GET)
+	public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("update");
+		ProductModel product=productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
+		return mv;
+}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView();
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cat")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		ProductModel product =new ProductModel();
+		product.setPid(Integer.parseInt(request.getParameter("pid")));
+		product.setPname(request.getParameter("pname"));
+		product.setPquantity(Integer.parseInt(request.getParameter("pquantity")));
+		product.setPdescrip(request.getParameter("pdescrip"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimage(request.getParameter("pimage"));
+		product.setCat(category);
+		product.setSid(supplier);
+		productDao.update(product);
+		mv.getModelMap().addAttribute("supplier", productDao.findAll());
+		return mv;
+		
+	 }*/
 
 	@RequestMapping(value="/view", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {

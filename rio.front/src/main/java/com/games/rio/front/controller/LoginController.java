@@ -2,6 +2,7 @@ package com.games.rio.front.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,11 +16,24 @@ import com.games.rio.backend.model.UserModel;
 public class LoginController {
 	@Autowired
 	private UserDao userDao;
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	/*@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView mv=new ModelAndView("login","command",new UserModel());
 		return mv;
-	}
+	}*/
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	 	public ModelAndView login(){
+	 		ModelAndView mv=new ModelAndView("login");
+	 		return mv;
+	 	}
+	 	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
+	 		HttpSession session=request.getSession(false);
+	 		if(session!=null)
+	 			session.invalidate();
+	 		ModelAndView mv=new ModelAndView("redirect: ./");
+	 		return mv;
+	 	}
 	@RequestMapping(value="/validate", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 		String email=request.getParameter("email");
@@ -28,6 +42,8 @@ public class LoginController {
 		
 		ModelAndView mv=null;
 		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+		HttpSession session=request.getSession(true);
+	       session.setAttribute("email", email);
 			mv=new ModelAndView("products");
 			mv.getModelMap().addAttribute("user", user);
 		}else{
@@ -36,6 +52,24 @@ public class LoginController {
 		}			
 		return mv;
 	}
+	 /*	@RequestMapping(value="/validate", method=RequestMethod.POST)
+	 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
+	 		String email=request.getParameter("txtemail");
+	 		String password=request.getParameter("txtpassword");
+	 		UserModel user=userDao.findById(request.getParameter("txtemail"));	
+	 		ModelAndView mv=null;
+	 		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+	 			HttpSession session=request.getSession(true);
+	 			session.setAttribute("email", email);
+	 			mv=new ModelAndView("redirect:./");
+	 			mv.getModelMap().addAttribute("user", user);
+	 		}
+	 		else{
+	 			mv=new ModelAndView("failure");		
+	 			mv.getModelMap().addAttribute("user", user);
+	 		}			
+	 		return mv;
+	 	}*/
 	/*@RequestMapping(value="/validate", method=RequestMethod.POST)
 	public ModelAndView validate (HttpServletRequest request, HttpServletResponse response){
 		String email=request.getParameter("txtemail");

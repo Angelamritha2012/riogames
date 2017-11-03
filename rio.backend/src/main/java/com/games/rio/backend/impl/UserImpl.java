@@ -58,7 +58,7 @@ private SessionFactory sessionFactory;
 
 public boolean validate(String email, String password) {
 	Session session=sessionFactory.openSession();
-	String hql = "FROM UseModel u WHERE u.email = '" + email +"' AND u.password ='" + password + "'" ;
+	String hql = "FROM UserModel u WHERE u.email = '" + email +"' AND u.password ='" + password + "'" ;
 	Query query = session.createQuery(hql);
 	List results = query.list();
 	if(results!=null)

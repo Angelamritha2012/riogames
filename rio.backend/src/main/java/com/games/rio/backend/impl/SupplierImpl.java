@@ -27,13 +27,21 @@ public class SupplierImpl implements SupplierDao {
 		session.close();
 	}
 
-	public void delete(String id) {
-		// TODO Auto-generated method stub
+	public void delete(int id) {
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(id));
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 
 	public void update(Supplier entity) {
-		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(entity);
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 
@@ -43,8 +51,8 @@ public class SupplierImpl implements SupplierDao {
 		Criteria criteria=session.createCriteria(Supplier.class);
 		criteria.add(Restrictions.eq("id",new Integer(id)));
 		List list=criteria.list();
-		session.getTransaction().commit();
-		session.close();
+		/*session.getTransaction().commit();
+		session.close();*/
 		if(!list.isEmpty()){
 			return (Supplier)list.get(0);
 		}else{
@@ -62,7 +70,5 @@ public class SupplierImpl implements SupplierDao {
 		//session.getTransaction().commit();
 		return results;
 	}
-
-	
 
 }

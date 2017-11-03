@@ -363,6 +363,7 @@ $(document).ready(function(){
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
+  <%@page isELIgnored="false" %>
 
 <html>
 <head>
@@ -394,11 +395,21 @@ $(document).ready(function(){
     </ul>
     <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
-          <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> SIGN IN</a></li>
-          <li><a href="register1"> REGISTER</a></li>
+<!--           <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> SIGN IN</a></li>
+ -->          <li><a href="register1"> REGISTER</a></li>
               <li><a href="products"> PRODUCTS</a></li>
-    
-      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    														
+						<c:choose>
+						
+							<c:when test="${sessionScope['email'] eq null}">
+							<li><a href="login" class="page-scroll">Login</a></li>
+							</c:when>
+							<%-- ${sessionScope['email']} --%>
+							<c:when test="${sessionScope['email'] ne null}">
+							<li><a href="logout" class="page-scroll">Logout</a></li>
+							</c:when>
+
+						</c:choose>
     </ul>
   </div>
 </nav>		
