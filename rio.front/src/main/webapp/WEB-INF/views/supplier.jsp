@@ -127,8 +127,8 @@
 					${p.pprice}
 				</div>
 				<div class="col-md-2">
-					<a href="update?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="delete?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 			</div>
 		</div>		

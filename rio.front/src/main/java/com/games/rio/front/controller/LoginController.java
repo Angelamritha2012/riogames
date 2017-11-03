@@ -44,7 +44,7 @@ public class LoginController {
 		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
 		HttpSession session=request.getSession(true);
 	       session.setAttribute("email", email);
-			mv=new ModelAndView("products");
+			mv=new ModelAndView("redirect:products");
 			mv.getModelMap().addAttribute("user", user);
 		}else{
 			mv=new ModelAndView("failure");		

@@ -16,13 +16,13 @@ public class ProductModel {
 		@Column(name="Product_pid")
 		private int pid;
 /*		@Column(name="Product_sid")
-*/		@ManyToOne(cascade=CascadeType.ALL)
+*/		@ManyToOne
 		private Supplier sid;
 		@Column(name="Product_pimage")
         private String pimage;
 		@Column(name="Product_pname")
         private String pname;
-		@ManyToOne(cascade=CascadeType.ALL)
+		@ManyToOne
 		private Category cat;
 		@Column(name="Product_pdescrip")
         private String pdescrip;

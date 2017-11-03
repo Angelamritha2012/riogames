@@ -85,7 +85,7 @@ public class CategoryController {
 	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("category");
+		ModelAndView mv=new ModelAndView("redirect:category");
 		return mv;
 	 
 }
