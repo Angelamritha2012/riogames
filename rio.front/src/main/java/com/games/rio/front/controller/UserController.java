@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.games.rio.backend.dao.UserDao;
+import com.games.rio.backend.model.Category;
+import com.games.rio.backend.model.ProductModel;
+import com.games.rio.backend.model.Supplier;
 import com.games.rio.backend.model.UserModel;
 
 @Controller
@@ -23,10 +26,26 @@ public class UserController {
 			ModelAndView mv=new ModelAndView("register1","command",new UserModel());
 			return mv;
 		}
-		@RequestMapping(value="/register1", method=RequestMethod.POST)
+		/*@RequestMapping(value="/register1", method=RequestMethod.POST)
 		 public ModelAndView register1(@ModelAttribute("user") UserModel user){
 			ModelAndView mv=new ModelAndView("login");
 			userDao.save(user);
+			return mv;
+		 }*/
+
+		@RequestMapping(value="/register1", method=RequestMethod.POST)
+		// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
+		 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
+			
+			UserModel user =new UserModel();
+			user.setName(request.getParameter("name"));
+			user.setEmail(request.getParameter("email"));
+			user.setContact(request.getParameter("contact"));
+			user.setAddress(request.getParameter("address")) ;
+			user.setPassword(request.getParameter("password"));
+			user.setRole("ROLE_USER");
+			userDao.save(user);
+			ModelAndView mv=new ModelAndView("redirect:login");
 			return mv;
 		 }
 		/*@RequestMapping(value="/validate", method=RequestMethod.POST)

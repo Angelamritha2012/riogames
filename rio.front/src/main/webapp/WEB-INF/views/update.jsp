@@ -138,6 +138,41 @@
 </div></div></div>
 </div></div>
 
+<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
+									
+									<input type="hidden" name="sid" value="${supplier.id}" >
+									<div class="form-group">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="${supplier.name}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" value="${supplier.address}" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="email" value="${supplier.email}" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="contact" value="${supplier.contact}" >
+									</div>
+									
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div></div>
+
 <%@include file="footer.jsp"%>
 </form>
 </body>

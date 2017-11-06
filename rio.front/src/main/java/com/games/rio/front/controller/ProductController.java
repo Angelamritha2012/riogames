@@ -142,7 +142,7 @@ public class ProductController {
 				product.setCat(category);
 				product.setSid(supplier);
 				productDao.save(product);
-				ModelAndView mv=new ModelAndView("supplier");
+				ModelAndView mv=new ModelAndView("redirect:supplier");
 				return mv;
 			 }
 		

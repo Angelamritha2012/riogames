@@ -29,7 +29,7 @@ public class CategoryController {
 	@Autowired
 	private SupplierDao supplierDao;
 
-	@RequestMapping(value="/category" , method=RequestMethod.GET)
+/*	@RequestMapping(value="/category" , method=RequestMethod.GET)
 	public ModelAndView category() {
 		ModelAndView mv=new ModelAndView ("category");
 		List<Category> category=categoryDao.findAll();
@@ -47,7 +47,7 @@ public class CategoryController {
 		mv.getModelMap().addAttribute("category", category);
 
 		return mv;
-	}
+	}*/
 	@RequestMapping(value="/updatecategory" , method=RequestMethod.GET) 
 	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
  		ModelAndView mv=new ModelAndView("update");
@@ -58,7 +58,7 @@ public class CategoryController {
 	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateCategory(HttpServletRequest request, HttpServletResponse response){
-		ModelAndView mv=new ModelAndView("redirect:category");
+		ModelAndView mv=new ModelAndView("redirect:supplier");
 		Category category=new Category();
 		category.setCid(Integer.parseInt(request.getParameter("cid")));
 		category.setCname(request.getParameter("cname"));
@@ -70,7 +70,7 @@ public class CategoryController {
 	 }
 	@RequestMapping(value="/deletecategory", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int cid){
-		ModelAndView mv=new ModelAndView("category","command",new Category());
+		ModelAndView mv=new ModelAndView("supplier","command",new Category());
 		categoryDao.delete(cid);
 		mv.getModelMap().addAttribute("category", categoryDao.findAll());
 		return mv;
@@ -85,7 +85,7 @@ public class CategoryController {
 	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("redirect:category");
+		ModelAndView mv=new ModelAndView("redirect:supplier");
 		return mv;
 	 
 }

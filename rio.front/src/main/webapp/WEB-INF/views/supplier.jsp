@@ -136,6 +136,133 @@
 		
 	</div>
 		
-
+<section id="products" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 wow fadeInLeft delay-05s">
+                    <div class="section-title">
+                        <h2 class="head-title">CATEGORY</h2>
+  
+<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+					Id
+				</div>
+				<div class="col-md-3">
+					 Category Name
+				</div>
+				<div class="col-md-3">
+					Description
+				</div>
+				<!-- <div class="col-md-2">
+					Quantity
+				</div>
+				<div class="col-md-2">				
+					Price
+				</div> -->
+				<div class="col-md-2">
+					Action
+				</div>
+			</div>
+		</div>
+		
+						<c:forEach items="${category}" var="cat">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+				<br>
+				${cat.cid}
+				</div>
+				<div class="col-md-3">
+				<br>
+					${cat.cname}
+				</div>
+				<div class="col-md-3">
+				<br>
+					${cat.cdesc}
+				</div>
+				<div class="col-md-2">
+				<br>
+					<a href="updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				</div>
+		</div>
+		</c:forEach>
+		
+	</div>
+		</div>
+		</div>
+		</div>
+</div>
+<section id="products" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 wow fadeInLeft delay-05s">
+                    <div class="section-title">
+                        <h2 class="head-title">SUPPLIER</h2>
+  
+<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+					Id
+				</div>
+				<div class="col-md-2">
+					  Name
+				</div>
+				<div class="col-md-2">
+					Email
+				</div>
+				<div class="col-md-2">
+					Address
+				</div>
+				<div class="col-md-2">
+					Contact
+				</div>
+				
+				<div class="col-md-2">
+					Action
+				</div>
+			</div>
+		</div>
+		
+						<c:forEach items="${supplier}" var="sup">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="col-md-2">
+				<br>
+				${sup.id}
+				</div>
+				<div class="col-md-2">
+				<br>
+					${sup.name}
+				</div>
+				<div class="col-md-2">
+				<br>
+					${sup.email}
+				</div>
+				<div class="col-md-2">
+				<br>
+					${sup.address}
+				</div>
+				<div class="col-md-2">
+				<br>
+					${sup.contact}
+				</div>
+				<div class="col-md-2">
+				<br>
+					<a href="updatesupplier?id=${sup.id}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="deletesupplier?id=${sup.id}"><span class="glyphicon glyphicon-trash"></span></a>
+				</div>
+				</div>
+		</div>
+		</c:forEach>
+		
+	</div>
+		</div>
+		</div>
+		</div>
 </body>
 </html>

@@ -34,6 +34,8 @@ public class SupplierController {
 		ModelAndView mv=new ModelAndView ("supplier");
 		List<ProductModel> products=productDao.findAll();
 		List<Category> category=categoryDao.findAll();
+		List<Supplier> supplier=supplierDao.findAll();
+		mv.getModelMap().addAttribute("supplier", supplier);
 
 		mv.getModelMap().addAttribute("category", category);
 
@@ -46,8 +48,9 @@ public class SupplierController {
 		ModelAndView mv=new ModelAndView ("supplier");
 		List<ProductModel> products=productDao.findAll();
 		List<Category> category=categoryDao.findAll();
-
+List<Supplier> supplier=supplierDao.findAll();
 		mv.getModelMap().addAttribute("category", category);
+		mv.getModelMap().addAttribute("supplier", supplier);
 
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
@@ -76,7 +79,7 @@ public class SupplierController {
 }*/
 	@RequestMapping(value="/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView delete(@RequestParam("id") int pid){
-		ModelAndView mv=new ModelAndView("supplier","command", new ProductModel());
+		ModelAndView mv=new ModelAndView("redirect:supplier","command", new ProductModel());
 		productDao.delete(pid);
 		mv.getModelMap().addAttribute("supplier", productDao.findAll());
 		return mv;
@@ -91,8 +94,26 @@ public class SupplierController {
 		 		return mv;
 	 }
 	*/
+	/*@RequestMapping(value="/supplier" , method=RequestMethod.GET)
+	public ModelAndView category() {
+		ModelAndView mv=new ModelAndView ("suplier");
+		List<Category> category=categoryDao.findAll();
+
+		mv.getModelMap().addAttribute("category", category);
+
+		return mv;
+	}
 	
-	
+	@RequestMapping(value="/suplier" , method=RequestMethod.POST)
+	public ModelAndView viewCategory() {
+		ModelAndView mv=new ModelAndView ("category");
+		List<Category> category=categoryDao.findAll();
+
+		mv.getModelMap().addAttribute("category", category);
+
+		return mv;
+	}
+	*/
 	
 	
 	
@@ -111,6 +132,36 @@ public class SupplierController {
 		return mv;
 		
 }	*/
+	@RequestMapping(value="/updatesupplier" , method=RequestMethod.GET) 
+	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int id){
+ 		ModelAndView mv=new ModelAndView("redirect:update");
+ 		Supplier supplier=supplierDao.findById(id);
+  		mv.getModelMap().addAttribute("supplier", supplier);
+  		return mv;	
+	}
+	@RequestMapping(value="/updatesupplier", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateSupplier(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("redirect:supplier");
+		Supplier supplier=new Supplier();
+		supplier.setId(Integer.parseInt(request.getParameter("id")));
+		supplier.setName(request.getParameter("name"));
+		supplier.setAddress(request.getParameter("Address"));
+		supplier.setEmail(request.getParameter("Email"));
+		supplier.setContact(request.getParameter("Contact"));
+
+		supplierDao.update(supplier);
+		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
+		return mv;
+		
+	 }
+	@RequestMapping(value="/deletesupplier", method=RequestMethod.GET)
+	public ModelAndView viewDelete(@RequestParam("id") int id){
+		ModelAndView mv=new ModelAndView("redirect:supplier","command",new Category());
+		supplierDao.delete(id);
+		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
+		return mv;
+}
 }
 
 

@@ -25,6 +25,14 @@ public class UserModel {
 	private String address;
 	@Column(name="User_password")
 	private String password;
+	@Column(name="Role")
+	private String role;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getPassword() {
 		return password;
 	}

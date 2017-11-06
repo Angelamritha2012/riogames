@@ -382,36 +382,44 @@ $(document).ready(function(){
     <ul class="nav navbar-nav">
       
       
-                               <li ><li><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>ADD</a>
-                               <ul class="dropdown-menu">
-									<li><a href="addproduct">Product</a>
-									<li><a href="addcategory">Category</a>
-									<li><a href="addsupplier">Supplier</a>
-							  </ul>
-                               </li>
                                 <!-- <li><a href="update"><span class="glyphicon glyphicon-pencil"></span>UPDATE</a></li>
                                 <li><a href="delete"><span class="glyphicon glyphicon-trash"></span>DELETE</a></li> -->
       
-    </ul>
+  
     <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
 <!--           <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> SIGN IN</a></li>
- -->          <li><a href="register1"> REGISTER</a></li>
-              <li><a href="products"> PRODUCTS</a></li>
+ -->          
+             
     														
 						<c:choose>
 						
 							<c:when test="${sessionScope['email'] eq null}">
 							<li><a href="login" class="page-scroll">Login</a></li>
+							<li><a href="register1"> REGISTER</a></li>
 							</c:when>
-							<%-- ${sessionScope['email']} --%>
+							
 							<c:when test="${sessionScope['email'] ne null}">
 							<li><a href="logout" class="page-scroll">Logout</a></li>
 							</c:when>
 
 						</c:choose>
+						</ul>
+						<c:if test="${sessionScope['email'] == 'beetroot@ex.com'}">
+                         <a href="add" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="addproduct">PRODUCT</a></li>
+            <li><a href="addcategory">CATEGORY</a></li>
+            <li><a href="addsupplier">SUPPLIER</a></li>
+                   </ul>
+                          </c:if>
+						<c:if test="${sessionScope['email'] != 'beetroot@ex.com'}">
+                         <li><a href="products"> PRODUCTS</a></li>
+ 							<li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                        
+                          </c:if>
     </ul>
-  </div>
+  
 </nav>		
 </body>
 </html>	
