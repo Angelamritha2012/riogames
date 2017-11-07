@@ -186,6 +186,7 @@
   </div>
 </div>
 </div>
+ 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
   
 </form>
 
@@ -211,6 +212,8 @@
   </div>
 </div>
 </div>
+ 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
 <!-- <div class="form-group">
  -->
  <div class="container">
@@ -318,6 +321,9 @@
   </div>
 </div>
 </div>
+
 </form>
+ 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
 </body>
 </html>
