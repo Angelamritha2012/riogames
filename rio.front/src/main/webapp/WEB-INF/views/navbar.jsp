@@ -408,9 +408,9 @@ $(document).ready(function(){
 						<c:if test="${sessionScope['email'] == 'beetroot@ex.com'}">
                          <a href="add" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="addproduct">PRODUCT</a></li>
-            <li><a href="addcategory">CATEGORY</a></li>
-            <li><a href="addsupplier">SUPPLIER</a></li>
+            <li><a href="admin/addproduct">PRODUCT</a></li>
+            <li><a href="admin/addcategory">CATEGORY</a></li>
+            <li><a href="admin/addsupplier">SUPPLIER</a></li>
                    </ul>
                           </c:if>
 						<c:if test="${sessionScope['email'] != 'beetroot@ex.com'}">

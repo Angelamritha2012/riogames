@@ -127,8 +127,8 @@
 					${p.pprice}
 				</div>
 				<div class="col-md-2">
-					<a href="updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 			</div>
 		</div>		
@@ -184,8 +184,8 @@
 				</div>
 				<div class="col-md-2">
 				<br>
-					<a href="updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>
@@ -253,8 +253,8 @@
 				</div>
 				<div class="col-md-2">
 				<br>
-					<a href="updatesupplier?id=${sup.id}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="deletesupplier?id=${sup.id}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="admin/updatesupplier?id=${sup.id}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="admin/deletesupplier?id=${sup.id}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>

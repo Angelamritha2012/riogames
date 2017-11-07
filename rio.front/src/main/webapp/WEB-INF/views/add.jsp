@@ -37,7 +37,7 @@
     </ul>
   </div>
 </nav>
-<form action="addproduct" method="POST">
+<form action="admin/addproduct" method="POST">
 <h1>Add to Products</h1>
 <!-- <div class="container">
  <div class="row">
@@ -195,7 +195,7 @@
 
 
 
-<form action="addcategory" method="POST">
+<form action="admin/addcategory" method="POST">
 <h1>Category</h1>
 
 
@@ -248,7 +248,7 @@
 
 
 
-<form action="addsupplier" method="POST">
+<form action="admin/addsupplier" method="POST">
 <h1>Supplier</h1>
 <div class="container">
  <div class="row">

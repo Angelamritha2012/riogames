@@ -72,18 +72,18 @@ public class ProductController {
 			
 			
 
-			@RequestMapping(value="/add" , method=RequestMethod.GET)
+			@RequestMapping(value="admin/add" , method=RequestMethod.GET)
 			public ModelAndView viewAdd() {
 				ModelAndView mv=new ModelAndView ("add","command",new ProductModel());
 				return mv;
 			}
-			@RequestMapping(value="/update" , method=RequestMethod.GET)
+			@RequestMapping(value="admin/update" , method=RequestMethod.GET)
 			public ModelAndView viewupdate() {
 				ModelAndView mv=new ModelAndView ("update");
 				return mv;
 			}
 			
-			@RequestMapping(value="/updateproduct", method=RequestMethod.GET)
+			@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
 			public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
 				ModelAndView mv=new ModelAndView("update");
 				ProductModel product=productDao.findById(pid);
@@ -94,7 +94,7 @@ public class ProductController {
 		}
 			
 			
-			@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
+			@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
 			// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 			public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 				ModelAndView mv=new ModelAndView("redirect: supplier");

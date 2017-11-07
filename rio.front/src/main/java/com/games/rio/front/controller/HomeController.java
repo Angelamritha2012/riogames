@@ -32,12 +32,12 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("index");
 		return mv;
 	}
-	@RequestMapping(value="/home", method=RequestMethod.GET)
+	@RequestMapping(value="admin/home", method=RequestMethod.GET)
 	public ModelAndView showHome(){
 		ModelAndView mv=new ModelAndView("index");
 		return mv;
 	}
-	@RequestMapping(value="/usrhome", method=RequestMethod.GET)
+	@RequestMapping(value="admin/usrhome", method=RequestMethod.GET)
 	public ModelAndView showMyHome(){
 		ModelAndView mv=new ModelAndView("index");
 		return mv;
