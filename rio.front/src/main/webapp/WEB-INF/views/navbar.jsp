@@ -406,12 +406,23 @@ $(document).ready(function(){
 						</c:choose>
 						</ul>
 						<c:if test="${sessionScope['email'] == 'beetroot@ex.com'}">
-                         <a href="add" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD <span class="caret"></span></a>
+                         <!-- <a href="add" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADD <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="admin/addproduct">PRODUCT</a></li>
             <li><a href="admin/addcategory">CATEGORY</a></li>
             <li><a href="admin/addsupplier">SUPPLIER</a></li>
-                   </ul>
+                   </ul> -->
+                   <ul class="nav navbar-nav navbar-Left">
+<!--     <li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a> -->
+			<li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-plus"></span>Add <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/addproduct"><span class="glyphicon glyphicon-plus"></span>Add Product</a></li>
+                        <li><a href="/addcategory"><span class="glyphicon glyphicon-plus"></span>Add Category</a></li>
+                        <li><a href="/addsupplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a></li>
+                        </ul>
+                </li>
+		</li>
                           </c:if>
 						<c:if test="${sessionScope['email'] != 'beetroot@ex.com'}">
                          <li><a href="products"> PRODUCTS</a></li>

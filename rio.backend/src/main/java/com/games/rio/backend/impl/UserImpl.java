@@ -49,7 +49,8 @@ private SessionFactory sessionFactory;
 		Query query = session.createQuery(hql);
 		List results=null;
 		results = query.list();
-		if(results!=null)
+		session.close();
+		if(results!=null && results.size()!=0)
 			return (UserModel) results.get(0);
 		else
 			return null;		
@@ -61,6 +62,7 @@ public boolean validate(String email, String password) {
 	String hql = "FROM UserModel u WHERE u.email = '" + email +"' AND u.password ='" + password + "'" ;
 	Query query = session.createQuery(hql);
 	List results = query.list();
+	session.close();
 	if(results!=null)
 		return true;
 	

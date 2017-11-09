@@ -48,14 +48,14 @@ public class CategoryController {
 
 		return mv;
 	}*/
-	@RequestMapping(value="admin/updatecategory" , method=RequestMethod.GET) 
+	@RequestMapping(value="/admin/updatecategory" , method=RequestMethod.GET) 
 	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
  		ModelAndView mv=new ModelAndView("update");
  		Category category=categoryDao.findById(cid);
   		mv.getModelMap().addAttribute("category", category);
   		return mv;	
 	}
-	@RequestMapping(value="admin/updatecategory", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updatecategory", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateCategory(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:supplier");
@@ -68,24 +68,24 @@ public class CategoryController {
 		return mv;
 		
 	 }
-	@RequestMapping(value="admin/deletecategory", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/deletecategory", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int cid){
 		ModelAndView mv=new ModelAndView("supplier","command",new Category());
 		categoryDao.delete(cid);
 		mv.getModelMap().addAttribute("category", categoryDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="admin/addcategory", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addcategory", method=RequestMethod.GET)
 	public ModelAndView viewAddCategory(){
 		ModelAndView mv=new ModelAndView("add","command",new Category());
 		//ModelAndView mv1=new ModelAndView("add","command",new Category());
 		return mv;
 		
 }
-	@RequestMapping(value="admin/addcategory", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("redirect:supplier");
+		ModelAndView mv=new ModelAndView("supplier");
 		return mv;
 	 
 }

@@ -10,16 +10,19 @@
 
 	<security:http auto-config="true">
 		<!-- <security:intercept-url pattern="/product/**" access="ROLE_ADMIN" /> -->
-		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-		
-		<security:form-login login-page="/login" default-target-url="/admin/" authentication-failure-url="/failure"/>		
+		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
+				<security:form-login login-page="/login" default-target-url="/admin/supplier/" authentication-failure-url="/failure"/>		
 		<security:logout logout-url="/"/>		
+		
+				<!-- <security:intercept-url pattern="admin/supplier/**" access="hasRole('ROLE_ADMIN')" /> -->
+<!-- 						<security:intercept-url pattern="/products/**" access="hasRole('ROLE_USER')" />
+ -->		
 		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
 		<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
-				<security:user name="Admin" password="Admin123" authorities="ROLE_ADMIN" />
+				<security:user name="beetroot@ex.com" password="beetroot" authorities="ROLE_ADMIN" />
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>

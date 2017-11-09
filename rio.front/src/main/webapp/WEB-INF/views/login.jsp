@@ -149,7 +149,7 @@ span.psw {
   </div>
   </div>
 </div>
-<form action="validate" method ="POST">
+<form action="login" method ="POST">
 
 <div class="form-group">
                    <div class="container text-center">
@@ -158,7 +158,7 @@ span.psw {
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="username" placeholder="E-Mail Address" class="form-control"  type="text">
     </div>
   </div>
 </div>

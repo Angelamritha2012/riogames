@@ -127,8 +127,8 @@
 					${p.pprice}
 				</div>
 				<div class="col-md-2">
-					<a href="admin/updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="admin/deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="/admin/updateproduct?id=${p.pid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="/admin/deleteproduct?id=${p.pid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 			</div>
 		</div>		
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 		
-						<c:forEach items="${category}" var="cat">
+						<c:forEach items="${categories}" var="cat">
 		<div class="row">
 			<div class="col-md-10">
 				<div class="col-md-2">
@@ -184,8 +184,8 @@
 				</div>
 				<div class="col-md-2">
 				<br>
-					<a href="admin/updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="admin/deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="/admin/updatecategory?id=${cat.cid}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="/admin/deletecategory?id=${cat.cid}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>
@@ -228,7 +228,7 @@
 			</div>
 		</div>
 		
-						<c:forEach items="${supplier}" var="sup">
+						<c:forEach items="${suppliers}" var="sup">
 		<div class="row">
 			<div class="col-md-10">
 				<div class="col-md-2">
@@ -253,8 +253,8 @@
 				</div>
 				<div class="col-md-2">
 				<br>
-					<a href="admin/updatesupplier?id=${sup.id}"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="admin/deletesupplier?id=${sup.id}"><span class="glyphicon glyphicon-trash"></span></a>
+					<a href="/admin/updatesupplier?id=${sup.id}"><span class="glyphicon glyphicon-edit"></span></a>
+					<a href="/admin/deletesupplier?id=${sup.id}"><span class="glyphicon glyphicon-trash"></span></a>
 				</div>
 				</div>
 		</div>

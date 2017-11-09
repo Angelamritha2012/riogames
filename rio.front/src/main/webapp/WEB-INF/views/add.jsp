@@ -5,7 +5,9 @@
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+ <%@include file="navbar.jsp"%>
+
+<!-- <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,8 +38,8 @@
       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
-</nav>
-<form action="admin/addproduct" method="POST">
+</nav> -->
+<form action="/addproduct" method="POST">
 <h1>Add to Products</h1>
 <!-- <div class="container">
  <div class="row">
@@ -48,6 +50,7 @@
   <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
     </div>
   </div>
+  
 </div>
 </div> -->
 

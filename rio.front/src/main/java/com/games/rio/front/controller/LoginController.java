@@ -34,31 +34,51 @@ public class LoginController {
 	 		ModelAndView mv=new ModelAndView("redirect: ./");
 	 		return mv;
 	 	}
-	@RequestMapping(value="/validate", method=RequestMethod.POST)
+		@RequestMapping(value="/login", method=RequestMethod.POST)
+		public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
+			String email=request.getParameter("email");
+			String password=request.getParameter("password");
+			UserModel user=userDao.findById(email);	
+			ModelAndView mv=null;
+			if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+			//if(user!=null) {
+			HttpSession session=request.getSession(true);
+		       session.setAttribute("email", email);
+/*		       mv.getModelMap().addAttribute("user", user);
+*/		       mv=new ModelAndView("/admin/supplier");
+		       
+			}else{
+				mv=new ModelAndView("failure");					
+			}
+			return mv;
+		}	 	
+/*	@RequestMapping(value="/validate", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		UserModel user=userDao.findById(email);	
 		
 		ModelAndView mv=null;
-		if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+		//if(email.equals(user.getEmail()) && password.equals(user.getPassword())){
+		if(user!=null) {
 		HttpSession session=request.getSession(true);
 	       session.setAttribute("email", email);
 	       mv=new ModelAndView();
 	       if(email.equalsIgnoreCase("beetroot@ex.com"))
 	       {
-	    	   mv=new ModelAndView("redirect:supplier");
+	    	   mv=new ModelAndView("redirect:/admin/supplier");
 	       }else {
-	    	   mv=new ModelAndView("redirect:products");
+	    	   mv=new ModelAndView("redirect:/admin/products");
 	       }
 			
 			//mv.getModelMap().addAttribute("user", user);
 		}else{
 			mv=new ModelAndView("failure");		
 			mv.getModelMap().addAttribute("user", user);
-		}			
+		}
+		
 		return mv;
-	}
+	}*/
 	 /*	@RequestMapping(value="/validate", method=RequestMethod.POST)
 	 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 	 		String email=request.getParameter("txtemail");
