@@ -18,15 +18,15 @@
 <body>
 <%@include file="header.jsp"%>
 
-<form action="update" method="POST">
-            <div class="container text-center">
+<!-- <form action="update" method="POST">
+ -->            <div class="container text-center">
 
                    <h1 class="top-title">UPDATE PRODUCTS</h1>
 
 <div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="admin/update" method="POST" role="form" style="display: block;">
+						<form id="update" action="updateproduct" method="POST" role="form" style="display: block;">
 						<input type="hidden" name="pid" value="${product.pid}" />									
 									
 									<div class="form-group">
@@ -110,10 +110,11 @@
 							</div>
 						</div>
 					</div>	
+					
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="admin/updatecategory" method="POST" role="form" style="display: block;" >
+						<form id="update" action="updatecategory" method="POST" role="form" style="display: block;" >
 									 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									
 									<input type="hidden" name="cid" value="${category.cid}" >
@@ -143,7 +144,7 @@
 <div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="admin/updatesupplier" method="POST" role="form" style="display: block;" >
+						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
 								 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									
 									<input type="hidden" name="sid" value="${supplier.id}" >

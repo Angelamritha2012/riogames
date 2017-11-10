@@ -68,7 +68,7 @@ List<Supplier> supplier=supplierDao.findAll();
 	  		return mv;
 	  	}
 	  	
-	 	@RequestMapping(value="/admin/supplier" , method=RequestMethod.POST)
+	 /*	@RequestMapping(value="/admin/supplier" , method=RequestMethod.POST)
 	 	public ModelAndView viewMysupplier() {
 	 		ModelAndView mv=new ModelAndView ("supplier");
 	 		List<ProductModel> products=productDao.findAll();
@@ -78,7 +78,7 @@ List<Supplier> supplier=supplierDao.findAll();
 	 		List<Supplier> suppliers=supplierDao.findAll();
 	 		mv.getModelMap().addAttribute("suppliers", suppliers);
 	 		return mv;
-	 	}
+	 	}*/
 	
 	@RequestMapping(value="/admin/addsupplier", method=RequestMethod.GET)
 	public ModelAndView viewAddSupplier(){

@@ -23,7 +23,13 @@ public class UserController {
 		private UserDao userDao;
 		@RequestMapping(value="/register1", method=RequestMethod.GET)
 		public ModelAndView register1(){
-			ModelAndView mv=new ModelAndView("register1","command",new UserModel());
+			//ModelAndView mv=new ModelAndView("register1","command",new UserModel());
+			ModelAndView mv=new ModelAndView("register1");
+			return mv;
+		}
+		@RequestMapping(value="/failure", method=RequestMethod.GET)
+		public ModelAndView failure(){
+			ModelAndView mv=new ModelAndView("failure","command",new UserModel());
 			return mv;
 		}
 		/*@RequestMapping(value="/register1", method=RequestMethod.POST)
@@ -33,21 +39,7 @@ public class UserController {
 			return mv;
 		 }*/
 
-		@RequestMapping(value="/register1", method=RequestMethod.POST)
-		// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
-		 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
-			
-			UserModel user =new UserModel();
-			user.setName(request.getParameter("name"));
-			user.setEmail(request.getParameter("email"));
-			user.setContact(request.getParameter("contact"));
-			user.setAddress(request.getParameter("address")) ;
-			user.setPassword(request.getParameter("password"));
-			user.setRole("ROLE_USER");
-			userDao.save(user);
-			ModelAndView mv=new ModelAndView("redirect:login");
-			return mv;
-		 }
+
 		/*@RequestMapping(value="/validate", method=RequestMethod.POST)
 		public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){
 			String email=request.getParameter("txtEmail");

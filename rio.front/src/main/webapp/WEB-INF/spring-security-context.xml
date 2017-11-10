@@ -10,21 +10,37 @@
 
 	<security:http auto-config="true">
 		<!-- <security:intercept-url pattern="/product/**" access="ROLE_ADMIN" /> -->
-		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
-				<security:form-login login-page="/login" default-target-url="/admin/supplier/" authentication-failure-url="/failure"/>		
-		<security:logout logout-url="/"/>		
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+				<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/failure"/>	
+					
+		<security:logout logout-url="/logout" logout-success-url="/" invalidate-session="true" delete-cookies="JSESSIONID"/>		
 		
 				<!-- <security:intercept-url pattern="admin/supplier/**" access="hasRole('ROLE_ADMIN')" /> -->
 <!-- 						<security:intercept-url pattern="/products/**" access="hasRole('ROLE_USER')" />
  -->		
 		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
+	<bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 
+     <property name="driverClassName" value="org.h2.Driver" />
+     <property name="url" value="jdbc:h2:tcp://localhost/~/test" />
+     <property name="username" value="sa" />
+    <property name="password" value="" />
+    </bean>	
 		<security:authentication-manager>
-		<security:authentication-provider>
+		<!-- <security:authentication-provider>
 			<security:user-service>
 				<security:user name="beetroot@ex.com" password="beetroot" authorities="ROLE_ADMIN" />
 			</security:user-service>
-		</security:authentication-provider>
+		</security:authentication-provider> -->
+		<security:authentication-provider>
+ 		<security:jdbc-user-service data-source-ref="dataSource"
+ 		  users-by-username-query=
+ 		    "select User_email, User_password, User_enabled from User where User_email=?"
+ 		  authorities-by-username-query=
+ 		    "select User_email, User_Role from User where User_email=? and (User_Role = 'ROLE_ADMIN' OR User_Role = 'ROLE_USER') " />
+ 	  </security:authentication-provider>
 	</security:authentication-manager>
 
 </beans>

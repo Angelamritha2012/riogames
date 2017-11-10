@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,11 +30,22 @@ public class LoginController {
 	 	@RequestMapping(value="/logout", method=RequestMethod.GET)
 	 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
 	 		HttpSession session=request.getSession(false);
+	 		SecurityContextHolder.clearContext();
 	 		if(session!=null)
 	 			session.invalidate();
 	 		ModelAndView mv=new ModelAndView("redirect: ./");
 	 		return mv;
 	 	}
+	 	@RequestMapping(value="/admin//logout", method=RequestMethod.GET)
+	 	public ModelAndView adminlogout(HttpServletRequest request, HttpServletResponse response){
+	 		HttpSession session=request.getSession(false);
+	 		SecurityContextHolder.clearContext();
+            if(session!=null)
+	 			session.invalidate();
+	 		ModelAndView mv=new ModelAndView("redirect: ./");
+	 		return mv;
+	 	}
+	 	
 		@RequestMapping(value="/login", method=RequestMethod.POST)
 		public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){		
 			String email=request.getParameter("email");
@@ -44,8 +56,8 @@ public class LoginController {
 			//if(user!=null) {
 			HttpSession session=request.getSession(true);
 		       session.setAttribute("email", email);
-/*		       mv.getModelMap().addAttribute("user", user);
-*/		       mv=new ModelAndView("/admin/supplier");
+		       mv.getModelMap().addAttribute("user", user);
+		       mv=new ModelAndView("supplier");
 		       
 			}else{
 				mv=new ModelAndView("failure");					

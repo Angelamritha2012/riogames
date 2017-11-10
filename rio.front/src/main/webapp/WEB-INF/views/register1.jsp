@@ -6,7 +6,8 @@
 <html>
 <%@include file="header.jsp"%>
 <body>
-<form action="register1" method ="POST">
+<form action="register1" method="POST">
+		 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
 <div class="container">
             <div class="container text-center">
@@ -27,7 +28,7 @@
   <div class="col-md-4 inputgroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="name" placeholder="Username" class="form-control"  type="text">
+  <input  name="username" placeholder="Username" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -110,7 +111,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="submit" class="btn btn-warning"  name="butSubmit" value="Register">
+
   </div>
 </div>
 

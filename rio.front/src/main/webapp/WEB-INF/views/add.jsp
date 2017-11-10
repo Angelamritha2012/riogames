@@ -39,7 +39,8 @@
     </ul>
   </div>
 </nav> -->
-<form action="/addproduct" method="POST">
+						<form id="add" action="addproduct" method="POST" role="form" style="display: block;">
+
 <h1>Add to Products</h1>
 <!-- <div class="container">
  <div class="row">
@@ -198,7 +199,8 @@
 
 
 
-<form action="admin/addcategory" method="POST">
+						<form id="add" action="addcategory" method="POST" role="form" style="display: block;">
+
 <h1>Category</h1>
 
 
@@ -251,14 +253,16 @@
 
 
 
-<form action="admin/addsupplier" method="POST">
+						<form id="add" action="addsupplier" method="POST" role="form" style="display: block;">
+ 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
 <h1>Supplier</h1>
 <div class="container">
  <div class="row">
   <label class="col-md-4 control-label"><p align="right">Supplier ID</p></label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <span class="input-group.4-addon"><i class="glyphicon glyphicon-earphone"></i></span>
   <input name="sid" placeholder="Suppiler id" class="form-control" type="text"><br>
     </div>
   </div>
@@ -326,7 +330,6 @@
 </div>
 
 </form>
- 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
 </body>
 </html>

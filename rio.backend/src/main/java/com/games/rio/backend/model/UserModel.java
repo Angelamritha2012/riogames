@@ -25,20 +25,10 @@ public class UserModel {
 	private String address;
 	@Column(name="User_password")
 	private String password;
-	@Column(name="Role")
+	@Column(name="User_Role")
 	private String role;
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	@Column(name="User_enabled")
+	private boolean enabled;
 	public int getId() {
 		return id;
 	}
@@ -69,5 +59,24 @@ public class UserModel {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
 	
 }

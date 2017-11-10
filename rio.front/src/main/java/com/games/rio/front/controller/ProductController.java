@@ -78,8 +78,13 @@ public class ProductController {
 			
 			
 			
-
+/*
 			@RequestMapping(value="/add" , method=RequestMethod.GET)
+			public ModelAndView viewAdd() {
+				ModelAndView mv=new ModelAndView ("add","command",new ProductModel());
+				return mv;
+			}*/
+			@RequestMapping(value="/admin/add" , method=RequestMethod.GET)
 			public ModelAndView viewAdd() {
 				ModelAndView mv=new ModelAndView ("add","command",new ProductModel());
 				return mv;
@@ -90,7 +95,7 @@ public class ProductController {
 				return mv;
 			}
 			
-			@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
+			@RequestMapping(value="/admin/updateproduct", method=RequestMethod.GET)
 			public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
 				ModelAndView mv=new ModelAndView("update");
 				ProductModel product=productDao.findById(pid);
@@ -104,7 +109,7 @@ public class ProductController {
 			@RequestMapping(value="/admin/updateproduct", method=RequestMethod.POST)
 			// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 			public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
-				ModelAndView mv=new ModelAndView("supplier");
+				ModelAndView mv=new ModelAndView("redirect:supplier");
 				Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cat")));
 				Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 				ProductModel product =new ProductModel();

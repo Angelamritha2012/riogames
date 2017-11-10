@@ -1,4 +1,4 @@
-<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,22 +10,11 @@
     <link rel="stylesheet" type="text/css" href="./resource/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./resource/css/animate.css">
     <link rel="stylesheet" type="text/css" href="./resource/css/style.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
       </head>
       	 <%@include file="navbar.jsp"%>
       
-  <body>
-  
-    
-            <!-- <!-- / nav
-			<img src="./resource/img/logo.png" alt="RIO GAMES EDITION">
-            <div class="container text-center">
-                
-                   <h2 class="top-title">RIO GAMES EDITION</h2>
-					<h6 class="top-title">Welcome to the Home of RIO </h6>
-                     
-                </div> -->
-             
-        
-    
-	</body>
-</html>
