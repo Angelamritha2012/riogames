@@ -191,14 +191,28 @@ span.psw {
 
     
 	
-	<footer>
+	
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
-  <p>@NIIT E-COMMERCE PROJECT 2017</p>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<%@include file="footer.jsp"%>
 
 </body>
 </html>

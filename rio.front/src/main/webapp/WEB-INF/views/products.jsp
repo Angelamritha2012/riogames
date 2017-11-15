@@ -17,8 +17,11 @@
                     <div class="section-title">
                         <h2 class="head-title">PRODUCTS</h2>
 						
-<div class="container">
+<%-- <div class="container">
   <div class="jumbotron">     
+
+<div class="row">
+  <div class="col-md-2 text-center">    
 
 				<ul>
 				<c:forEach items="${products}" var="p">
@@ -40,6 +43,8 @@
 									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="product?id=${p.pid}"
 										role="button" class="btn btn-warning">Details</a>
 								</p>
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								
 							</form>
 						</div>
 					</li>					
@@ -47,7 +52,26 @@
 					
 				</ul>
 			</div>
-		</div>
+		</div> --%>
+		<div class="container"> 
+ 
+  <div class="row">
+  <c:forEach items="${products}" var="p">  
+    <div class="row-fluid">
+		  <ul class="thumbnails">
+			<li class="span4">
+			  <div class="thumbnail">			  
+        <div class="panel-heading">${p.pname} </div>
+        <div class="panel-body"><a href="prodescrip?id=${p.pid}"><img src="./resource/img/${p.pimage}" class="img-responsive" style="width:20%" ></a></div>
+        <div class="panel-footer">Price:${p.pprice}
+			<a href="product?id=${p.pid}" class="overlay" role="button" a class="zoomTool" class="btn btn-warning btn-sm btn-block">Details<span class="glyphicon glyphicon-menu-right"><span class="glyphicon glyphicon-menu-right">
+				</span>	</span>			</a></div>
+      </div>
+    </div></c:forEach></div></div></div></div>
+    </div>
+    </div>
+    </section>
+    
 				
 
 <!-- <div class="row">

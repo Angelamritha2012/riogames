@@ -57,6 +57,14 @@ public class ProductController {
 				mv.getModelMap().addAttribute("products", products);
 				return mv;
 			}
+
+			/*@RequestMapping(value="/details" , method=RequestMethod.GET)
+			public ModelAndView details() {
+				ModelAndView mv=new ModelAndView ("product");
+				List<ProductModel> products=productDao.findAll();
+				mv.getModelMap().addAttribute("products", products);
+				return mv;
+			}*/
 			/*@RequestMapping(value="admin/products" , method=RequestMethod.GET)
 			public ModelAndView admin/products() {
 				ModelAndView mv=new ModelAndView ();

@@ -85,6 +85,7 @@
                         </ul>
                         </li>
 			<%-- <li class="dropdown">
+			
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADD <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href='<c:url value='admin/addproduct'></c:url>'>'PRODUCT</a></li>
@@ -98,8 +99,8 @@
 		<c:if test="${sessionScope['user'].role ne'ROLE_ADMIN'}">
       <li><a href="home"><span class="glyphicon glyphicon-shopping-home"></span>Home</a></li>
         <li><a href="products">Products</a></li>
-<!--         <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
- -->        </c:if>
+        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
+        </c:if>
        </ul>
 	 
 	 
