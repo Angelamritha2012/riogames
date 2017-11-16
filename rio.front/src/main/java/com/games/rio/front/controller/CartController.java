@@ -1,5 +1,5 @@
 package com.games.rio.front.controller;
-
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,13 +20,16 @@ import com.games.rio.backend.dao.ProductDao;
 import com.games.rio.backend.model.Cart;
 import com.games.rio.backend.model.CartItem;
 import com.games.rio.backend.model.ProductModel;
+import com.games.rio.backend.model.Supplier;
 
 @Controller
 public class CartController {
 	@Autowired
 	private ProductDao productDao;
+	
 /*	@Autowired
 	private CartDao cartDao;*/
+	
 	
 	@RequestMapping(value="/cart", method=RequestMethod.GET)
 	public ModelAndView getCartItems(Model model,HttpServletRequest request,HttpServletResponse response) {
@@ -46,7 +50,7 @@ public class CartController {
 	
 	@RequestMapping(value="/addToCart", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid, @RequestParam("txtQuantity") int quantity, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv=new ModelAndView("products");
+		ModelAndView mv=new ModelAndView("cart");
 		ProductModel product =productDao.findById(pid);
 		HttpSession session=request.getSession(false);
 		Cart cart=null;
@@ -61,7 +65,7 @@ public class CartController {
 			boolean state=false;
 			for(CartItem c : cart.getItems()){
 				if(c.getProduct().getPname().equals(product.getPname())){
-					c.setQuantity(item.getQuantity() + c.getQuantity());
+					c.setQuantity(item.getQuantity()) ;
 					state=true;
 				}
 			}
@@ -160,5 +164,36 @@ public class CartController {
 	}*/
 	
 	
+	@RequestMapping(value="/deleteitem", method=RequestMethod.GET)
+	public ModelAndView getDeleteById(Model model,@RequestParam("id") int pid, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv=new ModelAndView("redirect:cart");
+		ProductModel product =productDao.findById(pid);
+		HttpSession session=request.getSession(false);
+		Cart cart=null;
+		if(session!=null){
+			cart=(Cart) session.getAttribute("cart");
+			CartItem item=new CartItem();
+			try {
+			for(CartItem c : cart.getItems()){
+				if(c.getProduct().getPname().equals(product.getPname())){
+					item=cart.getItems().set(c.getId(), c);
+					cart.getItems().remove(item);					
+				}
+			}
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		//cart.getItems();	
+		session.setAttribute("cart", cart);
+		return mv;
+	
+	}
+	
 
+
+
+	
 }

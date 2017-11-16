@@ -62,8 +62,8 @@
       <div align="center" class="col-sm-2 panel-body">${c.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">${c.quantity * c.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">
-      <a href="updateitem?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="deleteitem?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      <a href="product?id=${c.product.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="deleteitem?id=${c.product.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
       
        

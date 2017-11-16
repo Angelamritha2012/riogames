@@ -61,5 +61,11 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("login");			
 		return mv;
 	}
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView home(){
+		ModelAndView mv=new ModelAndView("index");
+		return mv;
+	}
+	
 	
 }
