@@ -26,7 +26,7 @@
 		<tr><td class="col-sm-2">Description:</td><td align="left">${product.pdescrip}<!-- "A journey across space to discover the source of the Neucromorph outbreak" --></td></tr>
 		<!-- <tr><td>Supplier:</td><td>WE ARE GAMES</td></tr> -->
 		<tr><td class="col-sm-2">Price:</td><td align="left">${product.pprice}</td></tr>
-		<tr><td class="col-sm-2">Quantity:</td><td align="pull-right"><input type="text" name="txtQuantity" value="1" /></td></tr>
+		<tr><td class="col-sm-2">Quantity:</td><td align="pull-right"><input type="text" name="txtQuantity" value="" /></td></tr>
 		</table></div>
 		<input type="hidden" name="id" value="${product.pid}" />
         <%-- <div class="panel-footer"><a href="addToCart?id=${product.pid}" role="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
